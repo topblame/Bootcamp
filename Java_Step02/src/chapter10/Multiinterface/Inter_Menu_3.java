@@ -1,0 +1,7 @@
+package chapter10.Multiinterface;
+
+public interface Inter_Menu_3 extends Inter_Menu1, Inter_Menu2{
+
+	abstract String boggembab();
+	
+}

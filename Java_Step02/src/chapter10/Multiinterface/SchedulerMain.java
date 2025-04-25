@@ -1,0 +1,43 @@
+package chapter10.Multiinterface;
+
+import java.util.Scanner;
+
+public class SchedulerMain {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		while(true) {
+			System.out.println("R or r : 한명씩 차례로 할당");
+			System.out.println("L or l : 쉬고있거나 대기가 가장 적은 상담원에게 할당");
+			System.out.println("P or p :  업무 스킬값이 높은 상담원에게 할당");
+			System.out.println("S or s : 종료");
+			System.out.println("전화상담 방식을 선택하시오. : ");
+			
+			char input = scan.next().charAt(0);
+			char numb = scan.next().toUpperCase().charAt(0);
+			int ch = (int)input;
+			//ASCII 즉 INT
+			Scheduler  schedule = null;
+			//객체를 생성
+			if (ch == 'R'|| ch == 'r') {
+				schedule = new RoundRobin();
+			}
+			else if (ch == 'L'|| ch == 'l') {
+				schedule = new LeastJob();
+			}
+			else if (ch == 'P'|| ch == 'p') {
+				schedule = new PriorityAllocation();
+			}
+			else if (ch == 'S'|| ch == 's') {
+				System.out.println("업무를 종료합니다.");
+				break;
+			}
+			else {
+				System.out.println("지원하지 않는 서비스입니다.");
+			}
+			schedule.getNextCall();
+			schedule.sendCallToAgent();
+			
+		}//while
+	}//main
+}//class
