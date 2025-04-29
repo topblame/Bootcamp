@@ -1,0 +1,15 @@
+package chapter12.string;
+
+import java.util.HashMap;
+
+public class KeyMain {
+
+	public static void main(String[] args) {
+		
+		HashMap<Key, String> hashmap = new HashMap<Key, String>();
+		
+		System.out.println(hashmap);
+
+	}
+
+}

@@ -1,0 +1,31 @@
+package chapter14;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ArrayList_03 {
+	public static void main(String[] args) {
+		ArrayList<String> list = new ArrayList<String>();
+		
+		list.add("최대호");
+		list.add("신희우");
+		list.add("박현규");
+		list.add("유세영");
+		list.add("윤준영");
+		
+		System.out.println(list);
+		
+		for(String list1: list) {
+			System.out.println(list1);
+		}//for
+//		for(int i = 0; i < list.size(); i++) {
+//			System.out.println(list.get(i));
+//		}
+		Iterator<String> it = list.iterator();
+		
+		while (it.hasNext()) {
+			String v = it.next();
+			System.out.println(v + " ");
+		}
+	}//main
+}//class

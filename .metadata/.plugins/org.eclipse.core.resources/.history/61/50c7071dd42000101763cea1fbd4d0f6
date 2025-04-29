@@ -1,0 +1,12 @@
+package chapter12.string;
+
+public class StringEquals_03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String strVar1 = new String("홍길동");
+		String strVar2 = "홍길동";
+		
+	}
+
+}

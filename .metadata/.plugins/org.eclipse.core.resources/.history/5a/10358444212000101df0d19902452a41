@@ -1,0 +1,40 @@
+package chapter10.day3;
+
+public class Restaurant implements Koreanmenu, JapaneseMenu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void sushi() {
+		// TODO Auto-generated method stub
+		System.out.println("초밥이 주문되었습니다. ");
+	}
+
+	@Override
+	public void ramen() {
+		// TODO Auto-generated method stub
+		System.out.println("라멘이 주문되었습니다. ");
+	}
+
+	@Override
+	public void donkatsu() {
+		// TODO Auto-generated method stub
+		System.out.println("돈카츠가 주문되었습니다.");
+	}
+
+	@Override
+	public void kimchi() {
+		// TODO Auto-generated method stub
+		System.out.println("김치가 나옵니다. ");
+	}
+
+	@Override
+	public void bibimbap() {
+		// TODO Auto-generated method stub
+		System.out.println("비빔밥을 주문하였습니다.");
+	}
+
+}

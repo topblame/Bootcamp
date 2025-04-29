@@ -1,0 +1,14 @@
+package chapter09;
+
+public class CarMain_05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		method(new AICar());
+		method(new ManualCar());
+	}
+	public static void method(Car Car) {
+		Car.drive();
+		Car.stop();
+	}
+}

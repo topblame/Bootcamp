@@ -1,0 +1,11 @@
+package chapter08;
+
+public class DmbCellPhoneMain {
+	public static void main(String[] args) {
+		DmbCellPhone dmb = new DmbCellPhone(7, "Galaxy", "Black");
+		
+		//상속받은 필드
+		System.out.println("모델: " + dmb.model);
+		System.out.println("색상: " + dmb.color);
+	}
+}

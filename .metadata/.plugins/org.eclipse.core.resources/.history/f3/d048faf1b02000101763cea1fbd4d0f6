@@ -1,0 +1,27 @@
+package chapter11;
+
+class OutterRunnable{
+	//익명의 클래스.
+	Runnable getRunnable(int i) {
+		int num = 100;
+		return new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				System.out.println(i); //10
+				System.out.println(num); //100
+			}
+		};
+	} // Runnable
+}//OutterRun
+public class AnoyMousInnerMain_05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		OutterRunnable out = new OutterRunnable();
+		Runnable runnable = out.getRunnable(10);
+		runnable.run();
+	}
+
+}

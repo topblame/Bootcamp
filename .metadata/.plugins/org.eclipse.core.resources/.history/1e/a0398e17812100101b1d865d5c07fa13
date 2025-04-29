@@ -1,0 +1,40 @@
+package chapter12.string;
+
+public class Student {
+	int studentId;
+	String studentName;
+	
+	public Student(int studentId, String studentName) {
+		this.studentId = studentId;
+		this.studentName = studentName;
+	}
+	//객체의 값(value를 반환)
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return studentId + ", "+ studentName;
+	}
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return studentId;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if(obj instanceof Student) {
+			Student std = (Student)obj;
+			if(studentId==std.studentId) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+		
+	}//equals
+	
+}

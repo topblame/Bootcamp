@@ -1,0 +1,16 @@
+package chapter14.hashset;
+
+public class SolDeskMember {
+	private int memberId;
+	private String memberName;
+	
+	public SolDeskMember(){
+		
+	}
+	public SolDeskMember(int memberId, String memberName) {
+		this.memberId = memberId;
+		this.memberName = memberName;
+	}
+	
+	
+}

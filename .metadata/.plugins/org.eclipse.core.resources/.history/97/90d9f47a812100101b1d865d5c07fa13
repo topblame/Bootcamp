@@ -1,0 +1,25 @@
+package chapter12.string;
+
+public class StringBufferMain_08 throws CloneNotSupportedException {
+	
+	public static void main(String[] args) {
+		StringBuffer buf = new StringBuffer("Nice Day ");
+		System.out.println(buf.toString());
+		System.out.println(buf.length());
+		System.out.println(buf.capacity());
+		
+		buf.insert(0,  "Hi ");
+		System.out.println(buf.toString());
+		
+		buf.insert(11 ,  "Everybody! ");
+		System.out.println(buf.toString());
+		
+		buf.delete(0,  3);
+		System.out.println(buf);
+		
+		StringBuilder sb= new StringBuilder();
+			sb.ensureCapacity(50);
+			
+			Class sc = new Class.forName("chapter12.student") 
+	}
+}

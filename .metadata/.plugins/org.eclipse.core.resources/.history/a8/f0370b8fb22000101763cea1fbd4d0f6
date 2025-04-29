@@ -1,0 +1,19 @@
+package chapter11;
+
+public class FunInterMain_07 {
+	public void test() {
+		//익명의 클래스
+		new FunInter() { // FunInter funinter =  new FunInter()
+			
+			@Override
+			public void printData() {
+				// TODO Auto-generated method stub
+				System.out.println("목요일 !");
+			}
+		};
+	}//test
+	public static void main(String[] args) {
+		FunInterMain_07 funinter = new FunInterMain_07();
+		funinter.test();
+	}
+}

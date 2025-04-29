@@ -1,0 +1,13 @@
+package chapter14.stack;
+
+import java.util.ArrayList;
+
+class MyStack{
+	List<String> arrayStack = new ArrayList<String>();
+}//class
+
+public class StackTest_02 {
+	public static void main(String[] args) {
+		
+	}
+}

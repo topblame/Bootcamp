@@ -1,0 +1,11 @@
+package chapter09;
+
+public class AnimalMain {
+	public static void main(String[] args) {
+		System.out.println("개는 : " + animalSound(new Dog()));
+	}
+	
+	public static void animalSound(Animal animal) {
+		animal.sound();
+	}
+}

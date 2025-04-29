@@ -1,0 +1,19 @@
+package chapter10.day3;
+
+public class Restaurant_Main extends Restaurant{
+	public static void main(String[] args) {
+		Restaurant_Main res = new Restaurant_Main();
+		Koreanmenu kor = res;
+		JapaneseMenu jp = res;
+		
+		System.out.println("---------- 한국음식------------");
+		kor.bibimbap();
+		kor.kimchi();
+		System.out.println("---------- 일본음식 -----------");
+		jp.donkatsu();
+		jp.sushi();
+		jp.ramen();	
+	}
+
+	
+}

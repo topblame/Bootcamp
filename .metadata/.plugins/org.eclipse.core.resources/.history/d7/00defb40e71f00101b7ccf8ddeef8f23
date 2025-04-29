@@ -1,0 +1,23 @@
+package chapter10.Interface;
+
+public abstract class Calc {
+	double PI =3.14;
+	int ERROR = -9999999;
+	
+	abstract int add(int num1, int num2);
+	
+	abstract int substaract(int num1, int num2);
+	
+	abstract int times(int num1, int num2);
+	
+	abstract int divide(int num1, int num2);
+	
+	//자바 8부터 제공->  기본 수행문을 구현할 때 사용 (재정의 가능)
+	default void description() {
+		System.out.println("정수 계산");
+		myMethon(); // private 메서드 호출
+	}
+	private void myMethon() {
+		System.out.println("private 메서드");
+	}
+}

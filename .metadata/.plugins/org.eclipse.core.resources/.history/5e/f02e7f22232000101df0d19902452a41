@@ -1,0 +1,33 @@
+package chapter10.day3;
+
+public class Restaurant_Main extends Restaurant{
+	public static void main(String[] args) {
+		Restaurant_Main res = new Restaurant_Main();
+		Koreanmenu kor = res;
+		JapaneseMenu jp = res;
+		
+		System.out.println("---------- 한국음식------------");
+		kor.bibimbap();
+		kor.kimchi();
+		System.out.println("---------- 일본음식 -----------");
+		jp.donkatsu();
+		jp.sushi();
+		jp.ramen();	
+		
+		  System.out.println("\n== 반복문 다형성 ==");
+	        Koreanmenu[] kmArr = { korean };
+	        for (Koreanmenu km : kmArr) {
+	            km.kimchi();
+	            km.bibimbap();
+	        }
+
+	        JapaneseMenu[] jmArr = { japanese };
+	        for (JapaneseMenu jm : jmArr) {
+	            jm.sushi();
+	            jm.ramen();
+	            jm.donkatsu();
+	        }
+	}
+
+	
+}

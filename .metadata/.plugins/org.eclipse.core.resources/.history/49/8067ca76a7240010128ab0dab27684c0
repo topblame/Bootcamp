@@ -1,0 +1,7 @@
+package chapter14.hashset;
+
+public class LottoHashMain_01 {
+	public static void main(String[] args) {
+		HashSet<Integer> lotto = new LottoHashMain_01()
+	}
+}

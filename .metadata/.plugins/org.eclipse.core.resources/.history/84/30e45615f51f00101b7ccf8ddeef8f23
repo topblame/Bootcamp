@@ -1,0 +1,13 @@
+package chapter10.Interface;
+
+public class SmartTelevision_03 {
+	public static void main(String[] args) {
+		SmartTelevision tv = new SmartTelevision();
+		
+		tv.turnOn();
+		tv.setVolume(10);
+		tv.turnOff();
+		tv.search("www.naver.com");
+		System.out.println();
+	}
+}

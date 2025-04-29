@@ -1,0 +1,13 @@
+package chapter14;
+
+public class User_05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		UserInfo p = new UserInfo();
+		
+		p.setId(null);
+		p.setPwd(0);
+	}
+
+}

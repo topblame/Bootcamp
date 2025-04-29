@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;chapter05.MyLotto_14&apos; to &apos;MyLotto&apos;&#x0D;&#x0A;- Original project: &apos;Chapter05&apos;&#x0D;&#x0A;- Original element: &apos;chapter05.MyLotto_14&apos;&#x0D;&#x0A;- Renamed element: &apos;chapter05.MyLotto&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MyLotto_14&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;chapter05{MyLotto_14.java[MyLotto_14" matchStrategy="1" name="MyLotto" qualified="false" references="true" similarDeclarations="false" stamp="1744941757360" textual="false" version="1.0"/>
+</session>

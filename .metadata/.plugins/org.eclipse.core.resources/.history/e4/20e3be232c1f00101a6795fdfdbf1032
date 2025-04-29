@@ -1,0 +1,9 @@
+package chapter08;
+
+public class DmbCellPhoneMain {
+	public static void main(String[] args) {
+		DmbCellPhone dmb = new DmbCellPhone(7, "Galaxy", "Black");
+		
+		System.out.println("모델" + dmb.model);
+	}
+}

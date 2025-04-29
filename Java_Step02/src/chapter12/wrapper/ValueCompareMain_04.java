@@ -1,5 +1,6 @@
 package chapter12.wrapper;
 
+
 public class ValueCompareMain_04 {
 
 	public static void main(String[] args) {
@@ -20,6 +21,7 @@ public class ValueCompareMain_04 {
 		System.out.println("== 결과: " + (obj3 == obj4)); //외부
 		System.out.println("== 언박싱후 결과: " + (obj3.intValue() == obj4.intValue())); // 내부 값
 		System.out.println("==equals: " + (obj3.equals(obj4)));
+		
 		
 	}
 

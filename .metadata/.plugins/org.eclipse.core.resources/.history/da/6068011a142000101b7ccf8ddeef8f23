@@ -1,0 +1,12 @@
+package chapter10.Multiinterface;
+
+public class InterMenuMain_03 implements Inter_Menu_3 {
+	public static void main(String[] args) {
+		InterMenuMain_03 im = new InterMenuMain_03();
+		
+		// 부모 = 자식 
+		Inter_Menu1 im1 = im; // 업캐스팅
+		Inter_Menu2 im2 = im; 
+		Inter_Menu_3 im3 = im;
+	}
+}

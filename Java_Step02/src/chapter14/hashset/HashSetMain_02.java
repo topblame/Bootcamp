@@ -1,0 +1,25 @@
+package chapter14.hashset;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashSetMain_02 {
+	public static void main(String[] args) {
+		Set<String> hashSet = new HashSet<String>();
+		//요소추가
+		
+		hashSet.add("Apple");
+		hashSet.add("Orange");
+		hashSet.add("Banana");
+		
+		hashSet.add("Apple");
+		System.out.println("HashSet : " + hashSet);
+		
+		if (hashSet.contains("Banana")) {
+			System.out.println("Banana is in the Hashset");
+		}
+		//요소 삭제
+		hashSet.remove("orange");
+		System.out.println("After Remove "+hashSet);
+	}
+}

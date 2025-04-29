@@ -1,0 +1,7 @@
+package chapter08;
+
+public class Company {
+	Employee_09 emp = new Employee_09("김직원" , 4000);
+	emp.work();
+	
+}

@@ -1,0 +1,29 @@
+package chapter12.review;
+
+class Book implements Cloneable {
+    String title;
+    String author;
+    
+    Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+    
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone(); // 얕은 복사
+    }
+}
+
+public class ClonePractice {
+		public static void main(String[] args) throws CloneNotSupportedException {
+			Book book1 = new Book("java program", "lee sug gi");
+			Book book2 = (Book) book1.clone();
+			
+			book2.title = "Python programming";
+			
+			System.out.println(book1.title);
+			System.out.println(book2.title);
+		}
+	
+}

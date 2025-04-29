@@ -1,0 +1,18 @@
+package chapter10.Multiinterface;
+
+import java.util.Scanner;
+
+public class SchedulerMain {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		while(true) {
+			System.out.println("R or r : 한명씩 차례로 할당");
+			System.out.println("L or l : ");
+			System.out.println("P or p :  ");
+			System.out.println("S or s : ");
+			System.out.println("전화상담 방식을 선택하시오.");
+			System.out.println();
+		}//while
+	}//main
+}//class

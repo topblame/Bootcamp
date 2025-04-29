@@ -1,0 +1,10 @@
+package chapter13;
+
+public class GenericValueMain <T>{
+	public static void main(String[] args) {
+		GenericValue<String> v1 = new GenericValue<String>();
+		
+		v1.setValue("100");
+		System.out.println(v1.getValue());
+	}
+}

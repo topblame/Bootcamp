@@ -1,0 +1,26 @@
+package chapter11;
+
+class Outter{
+	//외부 클래스 멤버변수
+	int outNum = 100;
+	static int sNum = 200; // data영역 고정값. 
+	
+	Runnable getRunnable(int i) {
+		class MyRunnable implements Runnable{
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				
+			}//run
+			
+		}//myRunnalbe
+		return new MyRunnable();
+	}//get Runnable
+	
+}// outter class
+public class LocalInner {
+	public static void main(String[] args) {
+		
+	}
+}

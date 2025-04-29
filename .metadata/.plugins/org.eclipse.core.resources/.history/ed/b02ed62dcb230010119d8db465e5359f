@@ -1,0 +1,23 @@
+package chapter14;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class List_01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<String> students = new ArrayList<String>();
+		
+		students.add("Alice");
+		students.add("Bob");
+		students.add("Charlie");
+		students.add("Diana");
+		
+		System.out.println("Student in the list");
+		for(String student: students) {
+			System.out.println(student);
+		}
+	}
+
+}

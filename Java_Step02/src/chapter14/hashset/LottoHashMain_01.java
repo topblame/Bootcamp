@@ -1,0 +1,21 @@
+package chapter14.hashset;
+
+import java.util.HashSet;
+import java.util.Random;
+
+public class LottoHashMain_01 {
+	public static void main(String[] args) {
+		HashSet<Integer> lotto = new HashSet<Integer>(); 
+		//TreeSet<Integer> lotto = new TreeSet<Integer>(); // 정렬하여 출력
+		
+		while(true) {
+			int v = new Random().nextInt(45)+1;
+			lotto.add(v);
+			if(lotto.size() >= 6) {
+				break;
+			}//if
+			
+		}//while
+		System.out.println(lotto);
+	}
+}

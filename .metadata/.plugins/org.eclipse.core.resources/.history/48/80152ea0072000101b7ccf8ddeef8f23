@@ -1,0 +1,19 @@
+package chapter10.Multiinterface;
+
+import java.util.Scanner;
+
+public class SchedulerMain {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		while(true) {
+			System.out.println("R or r : 한명씩 차례로 할당");
+			System.out.println("L or l : 쉬고있거나 대기가 가장 적은 상담원에게 할당");
+			System.out.println("P or p :  업무 스킬값이 높은 상담원에게 할당");
+			System.out.println("S or s : 종료");
+			System.out.println("전화상담 방식을 선택하시오. : ");
+			
+			char input = scan.next().charAt(0);
+		}//while
+	}//main
+}//class

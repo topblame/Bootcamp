@@ -1,0 +1,29 @@
+package chapter12.string;
+
+public class StudentMain_08 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student studentLee = new Student(100, "이성우");
+		Student studentLee2 = studentLee;
+		
+		System.out.println("-------동일한 주소의 두 인스턴스 비교 -----");
+		if(studentLee == studentLee2) {
+			System.out.println("studentLee와 studentLee2의 주소는 같습니다.");
+		}
+		else {
+			System.out.println("studentLee와 studentLee2의 주소는 다릅니다.");
+		}
+		
+		
+		System.out.println("-------서로다른 의 두 인스턴스 비교 -----");
+		if(studentLee.equals(studentLee2)) {
+			System.out.println("studentLee와 studentSang의 주소는 같습니다.");
+		}
+		else {
+			System.out.println("studentLee와 studentSang의 주소는 다릅니다.");
+		}
+		
+	}
+
+}

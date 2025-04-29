@@ -1,0 +1,8 @@
+package chapter10.day3;
+
+public interface Restaurant extends Koreanmenu, JapaneseMenu {
+
+
+	
+
+}

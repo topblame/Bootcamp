@@ -1,0 +1,7 @@
+package chapter10.day3;
+
+public interface JapaneseMenu extends Koreanmenu{
+	void sushi();
+	void ramen();
+	void donkatsu();
+}

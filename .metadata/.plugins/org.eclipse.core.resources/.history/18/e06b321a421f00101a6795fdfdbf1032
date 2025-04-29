@@ -1,0 +1,24 @@
+package chapter08;
+
+public class DriverMain {
+	public static void main(String[] args) {
+		Driver driver = new Driver();
+		Driver d = new Driver();
+		
+		Vehicle_10 taxi = new Vehicle_10();
+		d.drive(taxi);
+		
+		
+		driver.drive(new Bus());
+		
+		Taxi taxi = new Taxi();
+		taxi.run();
+		
+		
+		driver.drive(taxi);
+		
+		
+	}
+	
+	
+}

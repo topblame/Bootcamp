@@ -1,0 +1,13 @@
+package chapter09;
+
+public class GameCharacter {
+	//템플릿 메서드 : 전투게임 순서 정의
+	
+	public final void fight() {
+		enterBattlefield(); //전투게임시작
+		arrtack(); // 게임-> 하위 클래스의 구현
+		useUItimate(); // 아이템 사용 - >하위클래스의 구현
+		leaveBattlefield(); //전투게임 종료.
+ 	}
+	
+}

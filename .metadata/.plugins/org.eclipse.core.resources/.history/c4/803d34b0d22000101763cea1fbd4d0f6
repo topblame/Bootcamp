@@ -1,0 +1,11 @@
+package chapter12.string;
+
+public class StringObjectMain_02 {
+	
+	public static void main(String[] args) {
+		StringObject v1 = new StringObject();
+		v1.setValue(v1);
+		
+		System.out.println(v1.getValue());
+	}
+}

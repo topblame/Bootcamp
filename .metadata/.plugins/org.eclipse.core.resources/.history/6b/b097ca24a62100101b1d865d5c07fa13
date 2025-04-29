@@ -1,0 +1,12 @@
+package chapter13;
+
+public class GenericContainer<T> {
+	private T[] items; // int[] i;
+	private int count;
+	
+	//기본 생성자 생략
+	
+	public GenericContainer(int size) {
+		items = (T[]) new Object[size];
+	}
+}

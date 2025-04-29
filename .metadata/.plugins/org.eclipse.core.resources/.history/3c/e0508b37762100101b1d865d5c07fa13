@@ -1,0 +1,8 @@
+package chapter12.string;
+
+public class Key {
+	public int number;
+	public int name;
+	public int addr;
+	
+}

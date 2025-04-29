@@ -1,0 +1,9 @@
+package chapter08;
+
+public class Samsung extends Appliance{
+	
+	public Samsung(String brand) {
+		// TODO Auto-generated constructor stub
+		super(brand);
+	}
+}

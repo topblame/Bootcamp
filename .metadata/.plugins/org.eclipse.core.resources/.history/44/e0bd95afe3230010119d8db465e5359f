@@ -1,0 +1,39 @@
+package chapter14;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class UserInfoMain_05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		UserInfo p;
+		int select;
+		
+		ArrayList<UserInfo> user = new ArrayList<UserInfo>();
+		while(true) {
+			Scanner scan = new Scanner(System.in);
+			System.out.print("아이디 생성. (exit 입력시 종료.)");
+			String id = scan.next();
+			if(p.getId().equals(id)) {
+				System.out.println("아이디가 중복되었습니다.");
+			}
+			else if(p.getId().equals("exit")) {
+				System.out.println("프로그램이 종료됩니다.");
+				break;
+			}
+			else {
+				System.out.println("사용할 수 있는 ID입니다.");
+				p.setId(id);
+			}
+			System.out.println("패스워드 입력.");
+			p.setPwd(scan.nextInt());
+			user.add(p);
+			break;
+			}//switch;
+		}
+
+	}
+
+}

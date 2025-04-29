@@ -1,0 +1,30 @@
+package chapter12.clone;
+class Book implements Cloneable{
+	String title;
+	
+	public Book(String title) {
+		// TODO Auto-generated constructor stub
+		this.title = title;
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return title;
+	}
+	
+	
+	
+}//Book
+
+public class MyBook_03 {
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,9 @@
+package chapter10.Multiinterface;
+
+public interface Inter_Menu2 {
+	abstract String tangsuyuck();
+	
+	default void show() {
+		System.out.println("탕수 육 맛 집");
+	}
+}

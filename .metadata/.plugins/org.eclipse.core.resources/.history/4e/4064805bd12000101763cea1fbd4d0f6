@@ -1,0 +1,32 @@
+package chapter12.string;
+
+public class StringMain_01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "";
+		String str1 = "Hi everybody! ";
+		String str2 = "Have a nice Day!";
+		
+		//str1 주소같음.
+		System.out.println(System.identityHashCode(str1));
+		//str1 주소같음 .
+		str = str1 +str2;
+		System.out.println(System.identityHashCode(str1));
+		System.out.println(str);
+		
+		//str1.concat - 컴파일시 새로운 객체로 문자열 반환
+		str1 = str1.concat(str2);
+		System.out.println(System.identityHashCode(str1));
+		
+		str = str1.concat(str2);
+		System.out.println(System.identityHashCode(str1));
+		
+		System.out.println("str1 글자수 : "+str1.length());
+		System.out.println("str2 글자수 : "+str2.length());
+		
+		System.out.println("str1 d위치 : "+str1.indexOf('d'));
+		System.out.println("str2 d위치 : "+str2.indexOf('d'));
+	}
+
+}

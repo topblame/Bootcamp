@@ -1,0 +1,13 @@
+package chapter08;
+
+public class Paprica extends Vegitable_02 {
+	private String color;
+	private int price;
+	private String name;
+	
+	public void Set2(String a, int b, String c) {
+		color = a;
+		price = b;
+		name = c;
+	}
+}

@@ -1,0 +1,34 @@
+package chapter12.string;
+
+import java.lang.reflect.Constructor;
+
+public class StringBufferMain_08 {
+	
+	public static void main(String[] args) throws CloneNotSupportedException{
+		StringBuffer buf = new StringBuffer("Nice Day ");
+		System.out.println(buf.toString());
+		System.out.println(buf.length());
+		System.out.println(buf.capacity());
+		
+		buf.insert(0,  "Hi ");
+		System.out.println(buf.toString());
+		
+		buf.insert(11 ,  "Everybody! ");
+		System.out.println(buf.toString());
+		
+		buf.delete(0,  3);
+		System.out.println(buf);
+		
+		StringBuilder sb= new StringBuilder();
+			sb.ensureCapacity(50);
+			
+			Class sClass = new Class.forName("chapter12.student");
+			System.out.println(sClass);
+			
+			Constructor[] cons1 = sc.getConstructors();
+			for(Constructor c : cons1) {
+				System.out.println(c);
+			}
+			Field[] field = sc.getFields();
+	}
+}

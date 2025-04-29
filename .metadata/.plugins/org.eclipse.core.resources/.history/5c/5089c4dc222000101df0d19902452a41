@@ -1,0 +1,48 @@
+package chapter10.day3;
+
+public class Restaurant_Main extends Restaurant{
+	public static void main(String[] args) {
+		Restaurant_Main res = new Restaurant_Main();
+		Koreanmenu kor = res;
+		JapaneseMenu jp = res;
+		
+		System.out.println("---------- 한국음식------------");
+		kor.bibimbap();
+		kor.kimchi();
+		System.out.println("---------- 일본음식 -----------");
+		jp.donkatsu();
+		jp.sushi();
+		jp.ramen();
+		
+	}
+
+	@Override
+	public void kimchi() {
+		// TODO Auto-generated method stub
+		System.out.println("김치가 주문되었습니다.");
+	}
+
+	@Override
+	public void bibimbap() {
+		// TODO Auto-generated method stub
+		System.out.println("비빔밥이 주문되었습니다.");
+	}
+
+	@Override
+	public void sushi() {
+		// TODO Auto-generated method stub
+		System.out.println("초밥이 주문되었습니다.");
+	}
+
+	@Override
+	public void ramen() {
+		// TODO Auto-generated method stub
+		System.out.println("라멘이 주문되었습니다.");
+	}
+
+	@Override
+	public void donkatsu() {
+		// TODO Auto-generated method stub
+		System.out.println("돈카츠가 주문되었습니다.");
+	}
+}

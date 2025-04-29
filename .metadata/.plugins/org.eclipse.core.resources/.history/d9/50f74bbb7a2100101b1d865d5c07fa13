@@ -1,0 +1,7 @@
+package chapter12.clone;
+
+public class MyBook {
+	public static void main(String[] args) {
+		
+	}
+}

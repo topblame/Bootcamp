@@ -1,0 +1,54 @@
+package chapter14;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PersonManager {
+	public void personMgr() {
+		int select;
+		Person p; // 선언만
+		
+		ArrayList<Person> personarr = new ArrayList<Person>();
+		
+		while(true) {
+			System.out.println("(1)회원가입, (2)정보삭제, (3)정보검색, (4)종료: ");
+			
+			Scanner scan = new Scanner(System.in);
+			select = Integer.parseInt(scan.nextLine());
+			
+			switch(select) {
+			case 1:
+				p = new Person(); // 새로운 객체.
+				System.out.println("정보를 추가합니다.");
+				
+				System.out.println("이름: ");
+				p.setName(scan.next());
+				
+				System.out.println("나이");
+				p.setAge(Integer.parseInt(scan.nextLine()));
+				
+				System.out.println("전화번호");
+				p.setTel(scan.next());
+				
+				personarr.add(p); // arraylist 배열.
+				System.out.println("회원가입완료");
+				break;  
+			case 2:
+				System.out.println("삭제할 이름: ");
+				String name = scan.next();
+				personarr.remove(name);
+				
+				System.out.println("정보를 삭제합니다.");
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+				
+			default: 
+				System.out.println("프로그램 종료.");
+				return;
+			}//switch
+		}//while
+	}//main
+}

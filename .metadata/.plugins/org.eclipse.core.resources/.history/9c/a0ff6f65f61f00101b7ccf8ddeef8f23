@@ -1,0 +1,17 @@
+package chapter10.Interface;
+
+public interface MyInterface extends X, Y{
+
+	@Override
+	public void y() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void x() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

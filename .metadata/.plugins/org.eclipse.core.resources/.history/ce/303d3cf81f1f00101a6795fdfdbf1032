@@ -1,0 +1,13 @@
+package chapter08;
+
+public class Appliance {
+	String brand;
+	
+	// 생성자로 초기화
+	void turnOn() {
+		System.out.println("brand" + " 전원을 켭니다.");
+	}
+	void turnOff() {
+		System.out.println("brand" + " 전원을 끕니다.");
+	}
+}
