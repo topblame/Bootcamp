@@ -1,0 +1,31 @@
+package chapter15.hashmap;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class HashMapMain_01 {
+	public static void main(String[] args) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("김성규", 95);
+		map.put("김민혁", 85);
+		map.put("임지아", 90);
+		map.put("유성연", 100);
+		System.out.println("총 Entry 수: " + map.size());
+		
+		//객체찾기
+		System.out.println("\n 김성규: "+ map.get("김성규"));
+		
+		//객체 키 모두 받기
+		Set<String> keySet = map.keySet();
+		System.out.println(keySet);
+		//iterator 반복구조로 형변환
+		 Iterator<String> keyIterator = keySet.iterator();
+		
+		 while(keyIterator.hasNext()) {
+			 String key = keyIterator.next();
+			 Integer v1= map.get(key);
+		 }
+	}
+}

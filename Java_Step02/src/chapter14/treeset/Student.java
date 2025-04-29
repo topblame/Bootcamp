@@ -1,0 +1,45 @@
+package chapter14.treeset;
+
+public class Student implements Comparable<Student>{
+	//멤버변수
+	private String name;
+	private int score;
+	
+	//생성자
+	public Student(String name, int score) {
+		this.name = name;
+		this.score = score;
+	}
+
+	//메서드
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return name + ": " + score;
+	}
+
+	@Override
+	public int compareTo(Student other) {
+		// TODO Auto-generated method stub
+		return Integer.compare(this.score, other.score)  ;// 오름차순 
+//		return Integer.compare(this.score, other.score) * -1; //내림차순
+	}
+	
+
+}
