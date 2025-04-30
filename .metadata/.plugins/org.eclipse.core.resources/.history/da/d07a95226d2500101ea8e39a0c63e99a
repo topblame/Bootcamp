@@ -1,0 +1,30 @@
+package chapter15.hashmap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MemberHashMap {
+	
+	private HashMap<Integer, String> hashMap;
+	
+	
+	public MemberHashMap() {
+		hashMap = new HashMap<Integer, String>();
+	}
+	//객체는 this로 올릴필요가없다.
+	
+	//addMember
+	public void addMember(Integer key, String value) {
+		hashMap.put(key, value);
+	}
+	//removeMember
+	public void removeMember(Integer key) {
+		hashMap.remove(key);
+	}
+	//showAllMember
+	public void showAllMember(){
+		for(Map.Entry<Integer, String> entry : hashMap.entrySet()) {
+			System.out.println(entry.getKey() + " : " + entry.getValue()+ "개");
+		}
+	}
+}

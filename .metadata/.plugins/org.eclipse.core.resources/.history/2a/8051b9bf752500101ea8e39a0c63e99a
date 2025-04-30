@@ -1,0 +1,40 @@
+package chapter15.hashmap;
+
+public class Student {
+	public int sno;
+	public String name;
+	
+	public Student(int sno, String name) {
+		this.sno = sno;
+		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Student [sno : " + sno + ", name = " + name + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return sno+name.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if(obj instanceof Student) {
+			Student compareStudent = (Student)obj;
+			if((this.sno == compareStudent.sno) && (name.equals(compareStudent.name))) {
+				return true;
+			}
+		}
+		else {
+			return false;
+		}
+		return super.equals(obj);
+	}
+	
+	
+}

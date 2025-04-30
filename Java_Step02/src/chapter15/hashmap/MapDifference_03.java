@@ -1,0 +1,38 @@
+package chapter15.hashmap;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class MapDifference_03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Map<String, String> hashmap =new HashMap<>();
+		
+		hashmap.put("Apple", "red");
+		hashmap.put("Banana", "yellow");
+		hashmap.put("Grape", "purple");
+		hashmap.put("Orange", "orange");
+		// 순서가 보장안됨.
+		System.out.println("hashmap 출력");
+		for(Entry<String, String> entry : hashmap.entrySet()) {
+			System.out.println(entry.getKey() + " : " + entry.getValue());
+		}
+		//Linked Hashmap
+		Map<String, String> linkedhashmap =new LinkedHashMap<>();
+		
+		linkedhashmap.put("Apple", "red");
+		linkedhashmap.put("Banana", "yellow");
+		linkedhashmap.put("Grape", "purple");
+		linkedhashmap.put("Orange", "orange");
+		
+		// 순서가 보장됨.
+		System.out.println("linked hashmap 출력 (입력된 순서)");
+		for(Entry<String, String> entry : linkedhashmap.entrySet()) {
+			System.out.println(entry.getKey() + " : " + entry.getValue());
+		}
+	}
+
+}

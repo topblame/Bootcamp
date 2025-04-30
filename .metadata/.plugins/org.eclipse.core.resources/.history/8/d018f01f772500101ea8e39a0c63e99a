@@ -1,0 +1,51 @@
+package chapter15.hashmap;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+public class StudentMain_07 {
+	public static void main(String[] args) {
+		//학생 점수 정보
+		Map<Student, Integer> map = new HashMap<Student, Integer>();
+		
+		//중복X
+		map.put(new Student(1, "정상화"), 95);
+		map.put(new Student(1, "정상화"), 95);
+		map.put(new Student(2, "정수"), 95);
+		map.put(new Student(3, "실수"), 95);
+		
+		System.out.println("총인원: " + map.size());
+		
+		Set<Student>keySet =map.keySet();
+		Iterator<Student> keyIterator = keySet.iterator();
+		
+		while (keyIterator.hasNext()) {
+			Student key = keyIterator.next();
+			Integer value = map.get(key);
+			System.out.println(key + " : " + value);
+		}
+		System.out.println();
+		Scanner scan = new Scanner(System.in);
+		Student std;
+		int input;
+		String name;
+		
+		while(true) {
+			System.out.print("학생 번호를 입력하세요. : ");
+			input = scan.nextInt();
+			
+			System.out.print("학생 이름을 입력하세요. : ");
+			name = scan.next();
+			
+			std = new Student(input, name);
+			
+			if(map.containsKey(std)) {
+				System.out.println(name + "학생의 점수는" + map.get(std));
+				break;
+			}
+		}
+	}
+}

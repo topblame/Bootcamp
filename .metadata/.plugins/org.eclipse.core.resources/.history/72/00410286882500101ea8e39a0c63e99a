@@ -1,0 +1,19 @@
+package chapter15.treemap;
+
+import java.util.TreeMap;
+
+public class TreeMapEmployeeMain_02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeMap<String, Integer> employeeMap = new TreeMap<String, Integer>();
+		
+		//employeemap에 5개 추가
+		
+		
+		//출력
+		
+		//특정 직원 출력
+	}
+
+}

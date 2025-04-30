@@ -1,0 +1,32 @@
+package chapter14.treeset;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import chapter15.treemap.Employees;
+
+public class ComparatorEmployeeMain_04 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Employees> employees = new ArrayList<Employees>();
+		
+		employees.add(new Employees("Charlie", 15));
+		employees.add(new Employees("Bob", 30));
+		employees.add(new Employees("Alice", 25));
+		
+		Collections.sort(employees, new NameComparator());
+		System.out.println("이름을 기준으로 오름차순 정렬");
+		for(Employees employee: employees) {
+			System.out.println(employee);
+		}//
+		System.out.println("=========================");
+		Collections.sort(employees, new AgeComparator());
+		System.out.println("나이를 기준으로 오름차순 정렬");
+		for(Employees employee: employees) {
+			System.out.println(employee);
+		}//
+	}
+
+}

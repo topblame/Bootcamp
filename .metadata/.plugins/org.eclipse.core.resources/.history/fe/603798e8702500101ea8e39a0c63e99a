@@ -1,0 +1,16 @@
+package chapter15.hashmap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class StudentMain_07 {
+	public static void main(String[] args) {
+		//학생 점수 정보
+		Map<Student, Integer> map = new HashMap<Student, Integer>();
+		
+		map.put(new Student(1, "정상화"), 95);
+		map.put(new Student(1, "정상화"), 95);
+		
+		System.out.println("총인원: " + map.size());
+	}
+}

@@ -1,0 +1,31 @@
+package chapter16;
+
+import java.util.Scanner;
+
+public class ThrowMain_04 {
+	public void gugudan(String str) {
+		int num = Integer.parseInt(str);
+		for(int i = 2; i < 10; i++) {
+			System.out.printf("%d %d = %d\n", num, i, num*i);
+		}
+	}
+	public void getNumber(String str) {
+		String s = str.substring(0, 1);
+		gugudan(s);
+	}
+	public static void main(String[] args) {
+		Scanner sca = new Scanner(System.in);
+		
+		ThrowMain_04 te = new ThrowMain_04();
+		
+		System.out.println("구구단 숫자입력");
+		String s = sca.next();
+		try {
+			te.getNumber(s);
+		} catch (Exception e) {
+			System.out.println("숫자를 입력하세요.");
+		}
+		System.out.println("숫자를입력하세요.");
+	} 
+	
+}

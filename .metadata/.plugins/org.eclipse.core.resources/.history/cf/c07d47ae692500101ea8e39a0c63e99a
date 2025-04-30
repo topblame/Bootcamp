@@ -1,0 +1,15 @@
+package chapter15.hashmap;
+
+import java.util.HashMap;
+
+public class MemberHashMap {
+	
+	private HashMap<Integer, String> hashMap;
+
+	public MemberHashMap(HashMap<Integer, String> hashMap) {
+		hashMap = new HashMap<Integer, String>();
+		this.hashMap = hashMap;
+	}
+	
+	
+}

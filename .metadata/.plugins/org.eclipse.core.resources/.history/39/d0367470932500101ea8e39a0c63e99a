@@ -1,0 +1,11 @@
+package chapter17;
+
+import java.util.Scanner;
+
+public class WriteToFile_01 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("파일에 저장할 내용을 입력하세요: ");
+		String content = scan.nextLine();
+	}
+}

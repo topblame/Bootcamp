@@ -1,0 +1,22 @@
+package chapter15.hashmap;
+
+public class MemberHashMapMain_06 {
+
+	public static void main(String[] args) {
+		
+		MemberHashMap memberHashMap = new MemberHashMap();
+		
+		memberHashMap.addMember(new Member(1001, "이대호"));
+		memberHashMap.addMember(new Member(1002, "이정수"));
+		memberHashMap.addMember(new Member(1003, "김우진"));
+		memberHashMap.addMember(new Member(1004, "정상화"));
+		
+		memberHashMap.showAllMember();
+		
+		memberHashMap.removeMember(1002);
+		memberHashMap.addMember(1003, "지점토");
+		memberHashMap.showAllMember();
+		
+	}
+
+}

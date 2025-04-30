@@ -1,7 +1,0 @@
-package chapter08;
-
-public class Driver {
-	public Driver(Vehicle_10 vehicle) {
-		vehicle.run();
-	}
-}

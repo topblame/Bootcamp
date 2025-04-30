@@ -1,0 +1,9 @@
+package chapter15.hashmap;
+
+import java.util.HashMap;
+
+public class MemberHashMap {
+	
+	private HashMap<Integer, String> hashMap;
+	
+}

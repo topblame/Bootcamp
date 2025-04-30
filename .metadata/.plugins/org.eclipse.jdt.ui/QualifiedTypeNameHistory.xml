@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="chapter09.MyNoteBook"/>
-    <fullyQualifiedTypeName name="chapter09.Animal"/>
-    <fullyQualifiedTypeName name="chapter09.HttpServlet"/>
-    <fullyQualifiedTypeName name="chapter09.LoginService"/>
-    <fullyQualifiedTypeName name="chapter09.FileDownloadService"/>
-    <fullyQualifiedTypeName name="chapter09.SmartPhone"/>
-    <fullyQualifiedTypeName name="chapter10.day3.Restaurant_Main"/>
-    <fullyQualifiedTypeName name="chapter10.day3.Koreanmenu"/>
-    <fullyQualifiedTypeName name="chapter10.day3.JapaneseMenu"/>
-    <fullyQualifiedTypeName name="chapter10.day3.Restaurant"/>
-    <fullyQualifiedTypeName name="chapter11.Out.In"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
-    <fullyQualifiedTypeName name="MyRunnable"/>
-    <fullyQualifiedTypeName name="chapter11.Outter"/>
-    <fullyQualifiedTypeName name="chapter11.OutterRun"/>
-    <fullyQualifiedTypeName name="chapter11.OutterRunnable"/>
-    <fullyQualifiedTypeName name="chapter11.FunInter"/>
     <fullyQualifiedTypeName name="chapter11.FunInterMain_07"/>
     <fullyQualifiedTypeName name="chapter11.EnumMain_08.Item"/>
     <fullyQualifiedTypeName name="java.lang.Runnable"/>
@@ -26,7 +9,6 @@
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="chapter12.string.Student"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
     <fullyQualifiedTypeName name="chapter12.string.ToStringMain_06"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
@@ -39,7 +21,6 @@
     <fullyQualifiedTypeName name="chapter12.review.Book"/>
     <fullyQualifiedTypeName name="java.lang.CloneNotSupportedException"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="chapter13.General"/>
     <fullyQualifiedTypeName name="chapter13.GeneralNoGeneric"/>
     <fullyQualifiedTypeName name="chapter13.GenericContainer"/>
@@ -49,15 +30,34 @@
     <fullyQualifiedTypeName name="chapter14.ArrayList_02"/>
     <fullyQualifiedTypeName name="chapter14.Person"/>
     <fullyQualifiedTypeName name="chapter14.PersonManager"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="chapter14.UserInfo"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="chapter14.linkedList.LinkedList_02"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="java.util.Vector"/>
-    <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="chapter14.vector.Board"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+    <fullyQualifiedTypeName name="java.util.Hashtable"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="chapter15.hashmap.Member"/>
+    <fullyQualifiedTypeName name="chapter15.hashmap.MemberHashMap"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="chapter15.hashmap.Student"/>
+    <fullyQualifiedTypeName name="java.util.TreeMap"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="chapter15.treemap.Employee"/>
+    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="chapter16.ThrowMain_04"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 </qualifiedTypeNameHistroy>

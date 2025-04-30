@@ -1,0 +1,41 @@
+package chapter15.hashmap;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class MemberHashMap {
+	
+	private HashMap<Integer, String> hashMap;
+	
+	
+	public MemberHashMap() {
+		hashMap = new HashMap<Integer, String>();
+	}
+	//객체는 this로 올릴필요가없다.
+	
+	//addMember
+	public void addMember(Member member) {
+		hashMap.put(member.memberId(), member.memberName());
+	}
+	//removeMember
+	public boolean removeMember(int memberId) {
+		while(hashMap.containsKey(memberId)) {
+			hashMap.remove(memberId);
+			return true;
+		}
+		System.out.println(memberId + "가 존재하지 않습니다.");
+		return false;
+	}
+	//showAllMember
+	public void showAllMember(){
+		Iterator<Integer> it = hashMap.keySet().iterator(); //반복구조로 형변환
+		
+		while(it.hasNext()) {
+			int key = it.next();
+			String member = hashMap.get(key);
+			System.out.println(member);
+		}
+		System.out.println();
+	}
+}

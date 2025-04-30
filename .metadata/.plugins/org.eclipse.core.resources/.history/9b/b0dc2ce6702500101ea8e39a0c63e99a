@@ -1,0 +1,19 @@
+package chapter15.hashmap;
+
+public class Student {
+	public int sno;
+	public String name;
+	
+	public Student(int sno, String name) {
+		this.sno = sno;
+		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Student [sno : " + sno + ", name = " + name + "]";
+	}
+	
+	
+}

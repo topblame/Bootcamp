@@ -1,0 +1,15 @@
+package chapter14.treeset;
+
+import java.util.Comparator;
+
+import chapter15.treemap.Employees;
+
+public class AgeComparator implements Comparator<Employee>{
+
+	@Override
+	public int compare(Employees e1, Employees e2) {
+		// TODO Auto-generated method stub
+		return Integer.compare(e1.age(), e2.age());
+	}
+
+}

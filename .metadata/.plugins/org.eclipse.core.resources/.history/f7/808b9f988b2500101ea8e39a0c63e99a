@@ -1,0 +1,13 @@
+package chapter15.treemap;
+
+public class Employee {
+	//클래스를 메서드화 
+	String name;
+	int age;
+	public Employee(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	
+}

@@ -1,0 +1,12 @@
+package chapter14.treeset;
+
+public record Employee(String name, Integer age) {
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return name + age;
+	}
+	
+	
+}

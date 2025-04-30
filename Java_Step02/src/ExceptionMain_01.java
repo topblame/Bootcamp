@@ -1,0 +1,17 @@
+
+
+public class ExceptionMain_01 {
+	public static void main(String[] args) {
+		String[] sarr = {"soldesk", "developer", "course"};
+		
+		for(int i =0; i<sarr.length; i++) {			
+			try {
+				System.out.println(sarr[i]);
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("예외발생.");
+				System.out.println(e.getMessage());
+			}//try catch
+		}//for
+	}//main
+}

@@ -1,0 +1,16 @@
+package chapter17;
+
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+
+public class ReadFromFile_03 {
+	public static void main(String[] args) {
+
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileReader("output.txt"));
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}
