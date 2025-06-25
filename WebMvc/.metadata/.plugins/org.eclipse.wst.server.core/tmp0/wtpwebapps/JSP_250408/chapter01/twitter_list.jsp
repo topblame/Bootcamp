@@ -39,16 +39,30 @@ session.setAttribute("id", id);
       <hr />
       <!--  트윗 목록  -->
       <h4>트윗 목록</h4>
-      <% 
-      ArrayList<String> msgs = (ArrayList<String>) application.getAttribute("msgs");
-      if(msgs != null && !msgs.isEmpty()){
-    	  int index = 0;
-    	  for(String msg : msgs){ %>
-    	  <li> <%=msg %>
-    	  	<form action="delete_tweet.jsp" method = "get" style = "display: inline;"></form>
-    	  </li>
-      }
-      %>
+      <ul>
+         <%
+         ArrayList<String> msgs = (ArrayList<String>) application.getAttribute("msgs");
+
+         if (msgs != null && !msgs.isEmpty()) {
+            int index = 0;
+            for (String msg : msgs) {
+         %>
+         <li><%=msg%>
+            <form action="delete_tweet.jsp" method="get" style="display: inline;">
+               <input type="hidden" name="index" value="<%=index%>" /> 
+               <input type="submit" value="삭제" />
+            </form>
+            </li>
+         <%
+               index++;
+            }
+         } else {
+         %>
+         <p>트윗이 없습니다. 첫 번째 트윗을 남겨보세요!</p>
+         <%
+         }
+         %>
+      </ul>
    </div>
 </body>
 </html>

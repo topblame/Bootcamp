@@ -1,0 +1,16 @@
+package jspbook;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AddrDAO {
+	List<AddrDTO> addrlist = new ArrayList<AddrDTO>();
+	
+	public void add(AddrDTO ab) {
+		addrlist.add(ab);
+	}
+	
+	public List<AddrDTO> getAddrlist(){
+		return addrlist;
+	}
+}

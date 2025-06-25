@@ -1,8 +1,7 @@
-INDEX VERSION 1.4+C:\Java\WebMvc\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1005984925.index
-9793675.index
-3738142992.index
-1849616980.index
-1959130283.index
-3704289030.index
+INDEX VERSION 1.4+C:\Java\EduJava\WebMvc\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1170450108.index
+241375569.index
 1604441245.index
+3904400137.index
+858544059.index
+3522855846.index

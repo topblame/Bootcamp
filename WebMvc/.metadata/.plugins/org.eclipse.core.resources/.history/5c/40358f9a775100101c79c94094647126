@@ -1,0 +1,5 @@
+package jspbook;
+
+public class MemberDTO {
+
+}
