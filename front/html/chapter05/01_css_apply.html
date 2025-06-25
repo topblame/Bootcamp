@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--외부 스타일 설정-->
+    <link rel="stylesheet" href="../style/01_cssstyle_external.css">
+    <!--내부 스타일 설정-->
+    <style>
+        p1{
+            color: blue;
+        }
+        p{
+            color:blue;
+            color : yellow;
+            color : red;
+        }
+    </style>
+  <!--  외부파일 순서가 내부보다 아래있을경우 외부 css적용-->
+</head>
+<body>
+    <p>css가 중복(내부/외부)</p>
+    <p1 style="color : red;">인라인 스타일 시트 적용</p1><br/>
+    <p2>내부 스타일 시트 적용</p2><br/>
+    <p3>외부 스타일 시트 적용</p3>
+</body>
+</html>

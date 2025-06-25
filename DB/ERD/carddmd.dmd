@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="carddmd" id="A6A362D2-6A7D-AE13-3342-6BDD3275354F" version="3.5">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 00:58:34 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>A6A362D2-6A7D-AE13-3342-6BDD3275354F</designId>
+</OSDM_Design>

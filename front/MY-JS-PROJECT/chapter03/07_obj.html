@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "d1"></p>
+    <p id = "d2"></p>
+    <p id = "d3"></p>
+    <p id = "d4"></p>
+    <p id = "d5"></p>
+    <p id = "d6"></p>
+    <p id = "d7"></p>
+    <p id = "d8"></p>
+    <p id = "d9"></p>
+    <script>
+        var today=new Date();
+        document.getElementById("d1").innerHTML=today.toDateString();   //날짜만간단히
+        document.getElementById("d2").innerHTML=today.toISOString();  // iso8601형식
+        document.getElementById("d3").innerHTML=today.toJSON();   //전송용
+        document.getElementById("d4").innerHTML=today.toLocaleDateString(); //날짜  
+        document.getElementById("d5").innerHTML=today.toLocaleTimeString();   //시간
+        document.getElementById("d6").innerHTML=today.toLocaleString();  // 날짜+ 시간
+        document.getElementById("d7").innerHTML=today.toString();  //문자열 형변환
+        document.getElementById("d8").innerHTML=today.toTimeString();   // 시간만 문자열
+        document.getElementById("d9").innerHTML=today.toUTCString(); //UTC기준 문자열
+    </script>
+</body>
+</html>

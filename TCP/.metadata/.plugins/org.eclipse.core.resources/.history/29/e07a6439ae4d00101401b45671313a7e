@@ -1,0 +1,13 @@
+package kr.OpenAi;
+
+import java.util.List;
+
+
+
+public class ChatRequest {
+	private String model;
+	private List<Message> messages;
+	private ResponseFormat response_format;
+	private
+	
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Get 방식을 이용하여 INPUT 하기</h2>
+    <form action="./getdata.jsp" method = "get">
+        <p>name: <input type = "text" name = "name"></p>
+        <!--required = 필수입력 placeholder = 안내문구-->
+        <p>password: <input type="password" name = "pass" placeholder="비밀번호" required></p>
+        <p>grade : <input type="text" name ="grade" value="학기입력"></p>
+        <p>major: <input type="text" name = "major"></p>
+        <p></p>
+        <textarea rows="5" cols="30">
+        텍스트를 작성하세요.
+        </textarea>
+        <p></p>
+        <input type="submit" value = "확인">
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="../script/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".content").remove("first, .second")
+    });
+  </script>
+  
+</head>
+<body>
+  <h1>.remove() 메소드</h1>
+   <div>
+      <div class="content first">첫번째 컨텐츠</div>
+      <div class="content second">두번째 컨텐츠</div>
+      <div class="content third">세번째 컨텐츠</div>
+   
+   </div>
+   
+   <button>상품 취소</button>
+</body>
+</html>
+

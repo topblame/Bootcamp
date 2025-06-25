@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="../script/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#firstitem").click(function(){
+        $("#firstBtn").clone.appendTo("#list"); /*맨마지막에 id가 firstitem인 요소추가.*/
+      });
+
+      $("#seconitem").click(function(){
+        $("#seconBtn").appendTo("#list"); /*맨마지막에 id가 firstitem인 요소추가.*/
+      });
+
+      $("#thirditem").click(function(){
+        $("#thirdBtn").appendTo("#list"); /*맨마지막에 id가 firstitem인 요소추가.*/
+      });
+
+      $("button").click(function(){
+        $("<b>여름 80%세일</b>").prependTo(".item");
+      });
+    });
+  </script>
+  
+</head>
+<body>
+  <h1>.appendTo() 메소드</h1>
+   <ul id="list">
+      <li id="firstitem">상의</li>
+      <li id="seconitem">하의</li>
+      <li id="thirditem">아우터</li>
+   
+   </ul>
+   <button id="firstBtn">상의 상품추가</button>
+   <button id="seconBtn">하의 상품추가</button>
+   <button id="thirdBtn">아우터 상품추가</button>
+   <hr>
+   <h1>.prepend() 메소드</h1>
+   <ul >
+      <li class="item">상의</li>
+      <li class="item">하의</li>
+      <li>아우터</li>
+   
+   </ul>
+   
+   <button>세일 상품</button>
+</body>
+</html>
+

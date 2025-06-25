@@ -1,0 +1,33 @@
+package kr.project.example;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class movieRank {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			String url = "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&ssc=tab.nx.all&query=%ED%98%84%EC%9E%AC+%EC%83%81%EC%98%81+%EC%98%81%ED%99%94+%EC%88%9C%EC%9C%84&oquery=%EC%98%81%ED%99%94+%EC%97%98%EB%A6%AC%EC%98%A4&tqi=ja43YwqX5mNssm1qs9lssssssOl-266828&ackey=945i5n9y";
+			Document doc = Jsoup.connect(url).userAgent("Mozilla/5.0").get();
+			Elements rows = doc.select("item");
+			
+			for(Element row : rows) {
+				String name = row.select("name").text();
+				String sub_text = row.select("sub_text").text();
+				System.out.println("영화 이름" + name);
+				System.out.println("관객수 : "+ sub_text);
+			}
+ 			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}

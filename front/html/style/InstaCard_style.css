@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+}
+ul, li{
+    list-style: none;
+}
+.container{
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 20% 0;
+}
+
+article.card{
+    width: 600px;
+    margin: 20px auto;
+    margin-bottom: 60px;
+    background-color: white;
+    border : 1px solid #c3c3c3;
+    border-radius: 3px;
+}
+
+/*header main footer*/
+
+/*header*/
+article.card header{
+    height: 40px;
+    padding: 10px;
+}
+
+article.card header>div{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.circle-image{
+    height: 100%;
+    padding : 5px;
+    box-sizing: border-box; /*padding을 주어도 벗어나지 않음.*/
+}
+.circle-image>img{
+    height: 100%;
+    border-radius: 50%;
+}
+.card-username{
+    padding: 10px 0;
+    font-weight: 900;
+    line-height: 20px;
+    margin-left: 5px;
+    font-size: 13px;
+}
+.option-more{
+    float: right;
+    padding: 7px;
+}
+button.transparent-button{
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+/*main carousel*/
+article.card main .carousel{
+    width: 100%;
+    position: relative;
+}
+article.card main .carousel>div{
+    overflow: hidden;
+}
+article.card main .carousel ul {
+    display: flex;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+article.card main .carousel ul>li {
+    flex: 0 0 auto;
+    width: 600px;
+}
+
+
+article.card main .carousel ul>li img {
+    margin-right: -5px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+
+}
+.slide{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    padding: 10px;
+}
+.slide img{
+    opacity: 0.75;
+}
+.slide-right{
+    right:0;
+}
+.carousel footer {
+    position: absolute;
+    height: 20px;
+    text-align: center;
+    width: 100%;
+    bottom: -20px;
+}
+
+.carousel footer div.active{
+    background-color: #0095f6;
+}
+.carousel footer div {
+  width: 6px;
+  height: 6px;
+  background-color: #a8a8a8;
+  display: inline-block;
+  border-radius: 50%;
+}
+/*main content 시작.*/
+.card-container{
+    padding : 5px, 10px;
+}
+.card-buttons{
+    padding: 0 5px;
+    margin-top: 5px;
+}
+.card-buttons>div{
+    display: inline-block;
+    margin-right: 10px;
+}
+.card-buttons > div.last-card-button{
+    float: right;
+    margin-right: 0;
+}
+.card-likes{
+    padding: 2px 5px;
+    font-size: 13px;
+}
+.card-content {
+    padding: 2px 5px;
+    font-size: 13px;
+}
+.card-content li>div{
+    padding : 1px 0;
+}
+.card-content li>div>span{
+    font-weight: 900;
+}
+.card-content li.comment>div>button{
+    float : right;
+}
+.card-content li.comment>div>button>img{
+    width: 12px;
+    margin-right: 5px;
+    color : #a0a0a0;
+}
+.card-times{
+    padding: 3px;
+    font-size: 10px;
+    color : #a0a0a0;
+}
+
+/*footer*/
+footer.card-comment{
+    position:relative;
+    height: 55px;
+    border-top: 1px solid #e0e0e0;
+}
+footer.card-comment input{
+    width: 100%;
+    height: 100%; /*55px*/
+    border : 0;
+    outline: 0;
+    padding: 0;
+    color: #606060;
+}
+footer.card-comment >div{
+    position: absolute;
+    right: 10px;
+    top:50%;
+    transform: translateY(-50%);
+}
+footer.card-comment >div> button{
+    color:#0095f6;
+    opacity: 0.5;
+    padding: 10px 5px;
+}

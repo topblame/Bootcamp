@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../script/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#addMenuButton").click(function(){
+                var menuName = $("#menuName").val();// 값불러오기
+                $("#menuList").append(`<li>${menuName}</li>`); //추가
+                $("#menuName").val("") // 입력란 초기화
+            });
+        });
+    </script>
+    <style>
+        #result{
+            font-weight: bold;
+            font-size: 24pt;
+        }
+    </style>
+</head>
+<body>
+    <h2>메뉴 등록</h2>
+    <input type="text" id="menuName" placeholder="메뉴 이름" />
+    <p></p>
+    <button id="addMenuButton">메뉴 추가</button>
+    <hr />
+    <h3>등록된 메뉴:</h3>
+    <ul id="menuList"></ul>
+</body>
+</html>

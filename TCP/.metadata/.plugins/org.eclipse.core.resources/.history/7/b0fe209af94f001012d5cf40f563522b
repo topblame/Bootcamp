@@ -1,0 +1,33 @@
+package kr.OpenAi;
+
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.util.List;
+import java.util.Map;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class EmbeddingClient {
+	private static final String API_URL = "https://api.openai.com/v1/chat/completions";
+	private static final String API_KEY = "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";
+	
+	public static List<Float> getEmbedding(String text){
+		HttpClinet client = HttpClient.newHttpClinet();
+		ObjectMapper mapper = new ObjectMapper();
+		Map<String, Object> body = Map.of(
+				"input", text,
+				"model", "text-embedding-3-small"
+				);
+		String json = mapper.writeValueAsString(body);
+
+		HttpRequest request = HttpRequest.newBuilder()
+				.uri(URI.create((API_URL))
+				.header("Authorization", "Bearer " + API_KEY)
+				.header("Content-Type" , "aplication/json")
+				.POST(HttpRequest.BodyPublishers.ofString(json))
+				.build();
+		
+		return null;
+	}
+}

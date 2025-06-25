@@ -1,0 +1,16 @@
+package kr.OpenAi;
+
+import java.util.List;
+
+
+public class ChatRequest {
+	private String model;
+	private List<Message> messages;
+	private Response response_format;
+	private double temperature;
+	private int max_tokens;
+	private double top_p;
+	private double frequency_penalty; //반복 텍스트에 대한 패널티
+	private double presence_penalty; //이미 특정단어에 대한 분석이 완료된 상태에서 다시 같은 단어가 등장 했을때의 패널티
+	
+}

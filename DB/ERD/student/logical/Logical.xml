@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="FA3C4BD8-DFB8-ECCE-B4F5-D455DF731D63" mainViewID="50F9349A-53DA-CC66-EB0F-4E1B77912121">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 06:47:21 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

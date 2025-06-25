@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Soldesk Car</h2>
+    <p id = "carname"></p>
+    <p id = "carcolor"></p>
+    <p id = "downspeed"></p>
+    <p id = "upspeed"></p>
+    
+    <script>
+        var car={name: 'Sonata', 
+        speed: 50, 
+        color: 'white',
+        speedUp:function(a){
+            let sp = this.speed+a;
+            if(sp >= 200){
+                sp = 50;
+                return sp;
+            }
+            else{
+                return sp;
+            }
+        },
+        speedDown:function(a){
+            let sp = this.speed-a;
+            if(sp < 0 ){
+                sp = 0;
+                return sp;
+            }
+            else{
+                return sp;
+            }
+        }
+    };
+         
+    var cname = document.getElementById("carname");
+    cname.textContent = car.name;
+    var ccolor = document.getElementById("carcolor");
+    ccolor.textContent = car.color;
+    var upspeed = document.getElementById("upspeed");
+    upspeed.textContent = '속도증가 : ' + car.speedUp(100);
+    var downspeed = document.getElementById("downspeed");
+    downspeed.textContent = '속도감소 : ' + car.speedDown(10);
+
+    </script>
+
+   
+        
+</body>
+</html>

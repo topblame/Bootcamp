@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F8200BEF-5590-37EF-1E13-1B6A7BA6FBDF" name="HS_PROFESSOR">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:08:06 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="prof_id" id="841C62CC-1E16-B4EC-398B-0B98174027BE">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:10:40 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="class_off_id" id="DA115EE9-41A3-AEE7-ADDA-3711D16B0A21">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:10:40 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prof_name" id="907982BE-4036-65DD-0C38-DC254859DFA3">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:10:40 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prof_jumin" id="E74995FF-96D1-916B-0684-D8EC8D66E5FD">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:10:40 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prof_addr" id="1C914FB5-D8DE-AAF0-20B7-2EA5CE0E4FC0">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:10:40 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prof_phnum" id="AD91A6BE-4DC1-BDD3-3AE7-F326FAD41372">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:10:40 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prof_email" id="50D5763D-8FC0-2B66-8748-D1587EF9696B">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:10:40 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1D309CD7-6662-5359-FF0B-34D1D57A5933" name="HS_PROFESSOR_PK">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:10:40 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="841C62CC-1E16-B4EC-398B-0B98174027BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

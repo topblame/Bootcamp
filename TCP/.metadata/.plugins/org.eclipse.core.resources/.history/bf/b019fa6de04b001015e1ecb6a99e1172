@@ -1,0 +1,8 @@
+package kr.project;
+
+public class Project02_D {
+	public static void main(String[] args) {
+		String query = "서울날씨";
+		
+	}
+}

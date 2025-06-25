@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>css_class</title>
+    <style>
+        .class1{
+            color:blue;
+            background-color: yellow;
+        }
+        .class2{
+            color: red;
+            background-color: green;
+        }
+        h3.class1{
+            color:navy;
+            background-color: pink;
+        }
+        #id1{
+            color : blue;
+            background-color: yellow;
+        }
+        #id2{
+            color: red;
+            background-color: aliceblue;
+        }
+        h2#id1{
+            color:navy;
+            background-color: pink;
+        }
+        p[text]{
+            color: yellow;
+            background-color: blue;
+        }
+        h1[text = "attr3"]{
+            color : green;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="class1"> class 1입니다.</h1>
+    <p class="class1"> class 1입니다.</p>
+    <h1 class="class2"> class 2입니다.</h1>
+    <p class="class2"> class 2입니다.</p>
+    <h3 class="class1">Element + class Selector</h3>
+
+    <hr>
+    <h1 id = "id1">ID1 선택자</h1>
+    <p id = "id1">ID1 선택자</p>
+    <h1 id = "id2">ID2 선택자</h1>
+    <p id = "id2">ID2 선택자</p>
+    <h2>H2 Default</h2>
+    <h2 id = "id1">Element+ ID selector</h2>
+
+    <hr>
+    <h1 text = "attr1">text 속성 이름 선택자</h1>
+    <h1 text = "attr2">text 속성 이름 선택자</h1>
+    <p text>text 속성 이름 선택자</p>
+    <h1 text = "attr3">속성과 속성값 이름 선택자</h1>
+    <p>속성 선택 없음</p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+package kr.project.example;
+
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class MoisCrawler {
+	public static void main(String[] args) {
+		try {
+			String url = "https://www.mois.go.kr/gpms/view/jsp/rss/rss.jsp?ctxCd=1012";
+			Document doc = Jsoup.connect(url).get();
+			Elements rows = doc.select("channel");
+
+			for(Element row: rows) {
+				System.out.println(row.select("title").text());	
+				System.out.println(row.select("description").text());
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

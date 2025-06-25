@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A6DC844D-5A53-B6D1-1573-5B3706D26B72" containerWithKeyObject="702EC7CE-8653-54C4-A2B8-F1949A7037E9" localFKIndex="78020B4A-08C7-D1B9-4D97-F021C6B6E74F" name="카드_예금계좌_FK">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:28:38 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<referredTableLongName>예금계좌</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C4A1D9F7-0A98-8C5C-5A66-E6833FE7ED1B</referredTableID>
+<keyObject>16912810-B87E-6120-92D5-F6907E4E77CC</keyObject>
+<referredKeyID>16912810-B87E-6120-92D5-F6907E4E77CC</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>예금계좌ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

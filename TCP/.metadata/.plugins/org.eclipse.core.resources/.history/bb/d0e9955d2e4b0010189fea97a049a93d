@@ -1,0 +1,12 @@
+package kr.project;
+
+public class Project01_D {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		private static final String API_URL = "https://maps.apigw.ntruss.com/map-geocode/v2/geocode?query=";
+		private static final String CLIENT_ID = "pmt91r09zg";
+		private static final String CLIENT_SECRET = "OmU2uVtwKFRCwoMFcracHxfmYByfMbTikVRqcaBE";
+	}
+
+}

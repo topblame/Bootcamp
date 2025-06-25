@@ -1,0 +1,80 @@
+package kr.project;
+
+import java.awt.Choice;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+public class Project02_GUI extends JFrame implements ActionListener, ItemListener{
+	// 멤버변수
+	   private Choice chyear, chmonth;
+	   private JLabel yLabel, mLabel;
+	   private JTextArea area;
+	   GregorianCalendar gc;
+	   private int year, month;
+	   private JLabel[] dayLabel = new JLabel[7];
+	   private String[] day = { "일", "월", "화", "수", "목", "금", "토" };
+	   private JButton[] days = new JButton[42];// 7일이 6주이므로 42개의 버튼필요
+	   private JPanel selectPanel = new JPanel();
+	   private GridLayout grid = new GridLayout(7, 7, 5, 5);// 행,열,수평갭,수직갭
+	   private Calendar ca = Calendar.getInstance();
+	   private Dimension dimen, dimen1;
+	   private int xpos, ypos;
+	   
+	   public Project02_GUI() {
+		   setTitle("오늘의 QT:" + ca.get(Calendar.YEAR) + "/" + (ca.get(Calendar.MONTH) + 1) + "/" + ca.get(Calendar.DATE));
+		   setSize(900, 600);
+		   setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		   dimen = Toolkit.getDefaultToolkit().getScreenSize();
+		   dimen1 = this.getSize();
+		   xpos = (int) (dimen.getWidth() / 2 - dimen1.getWidth() / 2);
+		   ypos = (int) (dimen.getHeight() / 2 - dimen1.getHeight() / 2);
+		   setLocation(xpos, ypos);// 화면의 가운데에 출력
+		   setResizable(false);
+		   setVisible(true);
+		   chyear = new Choice();
+		   chmonth = new Choice();
+		   yLabel = new JLabel("년");
+		   mLabel = new JLabel("월");
+		   
+		   init();
+	   }
+	   
+	   @Override
+	public void itemStateChanged(ItemEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		   area.setText("");
+		   String year = chyear.getSelectedItem();
+		   String month = chmonth.getSelectedItem();
+		   JButton btn = (JButton) arg0.getSource();
+		   String day = btn.getText();
+		   System.out.println(year + "," + month + "," + day);
+		   String bible = year + "-" + month + "-" + day;
+		   // Jsoup API : HTML파싱 방법
+		   // String url="https://sum.su.or.kr:8888/bible/today";
+		   String url = "https://sum.su.or.kr:8888/bible/today/Ajax/Bible/BodyMatter?qt_ty=QT1&Base_de=" + bible
+		            + "&bibleType=1";
+	}
+
+	public void init() {
+		   select();
+	   }
+}

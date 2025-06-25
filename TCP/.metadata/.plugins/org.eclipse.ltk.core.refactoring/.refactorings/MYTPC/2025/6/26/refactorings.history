@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;kr.OpenAi.Weather&apos; to &apos;WeatherApp&apos;&#x0D;&#x0A;- Original project: &apos;MYTPC&apos;&#x0D;&#x0A;- Original element: &apos;kr.OpenAi.Weather&apos;&#x0D;&#x0A;- Renamed element: &apos;kr.OpenAi.WeatherApp&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Weather&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;kr.OpenAi{Weather.java[Weather" matchStrategy="1" name="WeatherApp" qualified="false" references="true" similarDeclarations="false" stamp="1750665051132" textual="false" version="1.0"/>
+</session>

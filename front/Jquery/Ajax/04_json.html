@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../script/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#loadButton").click(function(){
+                $.ajax({
+                    url: "dummy.json",
+                    type : "GET",
+                    dataType : "json",
+                    success: function(data){
+                        console.log(data);
+                        console.log(data.title);
+                        console.log(data.subject);                        
+                        console.log(data.list);  
+                        $("#titleLayer").html("<h2>" + data.title + "</h2>");                      
+                        $(".subjectLayer").html("<h2>" + data.subject + "</h2>");                      
+                        
+                        var list = data.list;
+                        var tableTag = "";
+ 
+                        for (var i = 0; i < list.length; i++) {
+                            tableTag +=
+                                "<tr><td>" +
+                                list[i].subject +
+                                "</td><td>" +
+                                list[i].content +
+                                "</td></tr>";
+                        }
+                        $("table").html(tableTag);
+
+                        /* each문 활용 */
+                        $.each(list, function (index, row) {
+                            tableTag +=
+                                "<tr><td>" +
+                                row.subject +
+                                "</td><td>" +
+                                row.content +
+                                "</td></tr>";
+                        });
+                        $("table").html(tableTag);
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        #result{
+            font-weight: bold;
+            font-size: 24pt;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="로드" id = "loadButton">
+    <div id = "titleLayer"></div>
+    <div class = "subjectLayer"></div>
+    <table width = "100%" border="1"></table>
+</body>
+</html>

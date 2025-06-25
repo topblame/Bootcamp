@@ -1,0 +1,83 @@
+package kr.OpenAi;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class VectorDBPlaygroundRAG {
+	private static final String API_URL = "https://api.openai.com/v1/chat/completions";
+	private static final String API_KEY = "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";
+	
+	public static void main(String[] args) throws Exception {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("질문을 입력하세여: ");
+		String uerQuestion = scanner.nextLine();
+		
+		// 벡터 DB 결과로 가정한 문서 읽기
+		 Scanner sc = new Scanner(System.in);
+	        System.out.println("질문을 입력하세요:");
+	        String userQuestion = sc.nextLine();
+
+	        // 벡터 DB 결과로 가정한 문서 읽기
+	        String documentContext = readDocument("retrieved.txt"); // 벡터 DB 결과 저장 파일
+
+	        String prompt = "당신은 문서 기반 질문 응답 모델입니다. 다음 문서를 참고하여 질문에 답변하세요. 문서 외 지식은 사용하지 마세요. 문서에 없는 정보는 \"문서에 없습니다.\"라고 응답하세요.\n\n"
+	                + "문서:\n" + documentContext + "\n\n질문:\n" + userQuestion;
+
+	        String answer = askOpenAI(prompt);
+	        System.out.println("AI 응답:\n" + answer);
+	    }
+
+	    public static String askOpenAI(String question) throws Exception {
+	        Map<String, Object> requestData = Map.of(
+	                "model", "gpt-4o",
+	                "messages", List.of(
+	                        Map.of("role", "user", "content", question)
+	                ),
+	                "max_tokens", 500,
+	                "temperature", 0.2
+	        );
+
+	        ObjectMapper objectMapper = new ObjectMapper();
+	        String requestBody = objectMapper.writeValueAsString(requestData);
+
+	        HttpRequest request = HttpRequest.newBuilder()
+	                .uri(URI.create(API_URL))
+	                .header("Content-Type", "application/json")
+	                .header("Authorization", "Bearer " + API_KEY)
+	                .POST(HttpRequest.BodyPublishers.ofString(requestBody))
+	                .build();
+
+	        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+
+	        if (response.statusCode() != 200) {
+	            System.out.println("오류 코드: " + response.statusCode());
+	            System.out.println("응답 본문: " + response.body());
+	            throw new RuntimeException("API 호출 실패");
+	        }
+
+	        JsonNode root = objectMapper.readTree(response.body());
+	        return root.get("choices").get(0).get("message").get("content").asText();
+	    }
+
+	    public static String readDocument(String filename) {
+	        try {
+	            return Files.readString(Paths.get(filename));
+	        } catch (IOException e) {
+	            System.out.println("[오류] 문서를 읽을 수 없습니다: " + e.getMessage());
+	            return "";
+	        }
+	    }
+			
+	
+}

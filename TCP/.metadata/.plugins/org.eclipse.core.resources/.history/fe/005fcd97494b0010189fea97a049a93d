@@ -1,0 +1,25 @@
+package kr.project;
+
+
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+public class Project02_A {
+	public static void main(String[] args) {
+		String url = "https://news.naver.com/";
+		try {
+			// 크롤링 봇으로 차단 되지 않게. 브라우징으로 위장
+			Document doc = Jsoup.connect(url)
+					.userAgent("Mozilla/5.0")
+					.get(); //html을 가져옴
+			
+			Elements headlines = doc.select("<a href=\"https://n.news.naver.com/article/661/0000056883?cds=news_media_pc&amp;type=editn\" class=\"cnf_news _cds_link _editn_link\" onclick=\"nclk(event, 'home.editnfimg', '', '')\">중학교 교사 사망 사건 여파로 지지율 추락?.. 김광수 교육감 긍정평가 7%넘게  하락</a>");
+			
+			System.out.println("주요 뉴스 헤드라인: ");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

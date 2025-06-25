@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            padding:20px;
+            margin:20px;
+        }
+        .shadow1{
+            box-shadow: 5px 5px 10px #000;
+            /*수평 수직 번짐*/
+
+        }
+        .shadow2{
+            box-shadow: -5px -5px 10px #000;
+        }
+        div{
+           width: 200px;
+           height: 50px;
+           padding: 10px;
+           margin: 30px; 
+        }
+        #bs1{
+            border: 1px solid rgba(102, 186,255, 0.4);
+            box-shadow: 20px 10px rgba(102,186,255, 0.4);
+        }
+
+        #bs2{
+            border : 1px solid black;
+            box-shadow: 10px 10px #8CE55C;
+        }
+    </style>
+</head>
+<body>
+    <div id="bs1">
+		<h3>박스 그림자 특수 효과1</h3>
+	</div>
+	<div id="bs2">
+		<h3>박스 그림자 특수 효과2</h3>
+	</div>
+	<p></p>
+	<p></p>
+	<p></p>
+	<hr />
+	<img src="pic1.jpg" class="shadow1" />
+	<img src="pic2.jpg" class="shadow2" />
+</body>
+</html>

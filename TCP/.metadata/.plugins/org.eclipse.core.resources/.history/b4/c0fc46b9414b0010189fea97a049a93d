@@ -1,0 +1,28 @@
+package kr.project;
+
+import java.awt.event.ActionListener;
+
+import kr.soldesk.AddressVO;
+
+public class NaverMap implements ActionListener{
+	private static final String GEOCODE_API_URL ="https://maps.apigw.ntruss.com/map-geocode/v2/geocode";
+	private static final String STATICMAP_API_URL = "https://maps.apigw.ntruss.com/map-static/v2/raster";
+	private static final String CLIENT_ID = "pmt91r09zg";
+	private static final String CLIENT_SECRET = "OmU2uVtwKFRCwoMFcracHxfmYByfMbTikVRqcaBE";
+	
+	Project01_GUI naverMap;
+	
+	public NaverMap(Project01_GUI naverMap) {
+		this.naverMap = naverMap;
+	}
+	
+	//API로 응답 받은 정보를 이용하여 지도 이미지 생성
+	public void map_service(AddressVO vo) {
+		try {
+			naverMap.resAddress.setText("도로명 주소: "+ vo.getRoadAddress());
+			naverMap.jibunAddress.setText("지번 주소: "+ vo.getJibunAddress());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

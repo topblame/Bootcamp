@@ -1,6 +1,0 @@
-package chapter14;
-
-public class UserInfo {
-	private String id;
-	private int pwd;
-}

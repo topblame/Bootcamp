@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>07_apply_3D</title>
+	<style>
+	  
+		div{
+			background-color: green;
+			width: 150px;
+			height: 150px;
+		}
+		
+		.container{
+			background-color: yellow;
+            border: 1px solid black;
+		}
+		.transformed:hover {
+			backface-visibility:visible;
+			transform-origin: 50% 42%; /*50% 50% */
+			transform: perspective(500px) rotateY(50deg) rotateX(0deg);
+			
+			}
+		.transformed2:hover {
+			backface-visibility:visible;
+			transform-origin: 50% 45%;
+			transform: perspective(500px) rotateY(0deg) rotateX(140deg);
+			
+			}
+		
+	</style>
+</head>
+<body>
+    <div class="d1">
+	<div class="container">
+	    <div class="transformed">박스 1</div>
+    </div>
+	<p></p>
+    <div class="container">
+        <div class="transformed2">박스 2</div>
+    </div>
+    </div>
+</body>
+</html>
+
+<!-- backface-visibility:visible;  -> 뒷면과 객체가 모두 보이도록 설정 -->
+<!-- backface-visibility:hidden;  -> 뒷면만 보임 -->
+
+

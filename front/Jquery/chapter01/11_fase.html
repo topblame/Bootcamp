@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../script/jquery-3.7.1.min.js"></script>
+    
+    <script>
+      $(document).ready(function () {
+        $("#out").click(function () {
+          $("img").fadeOut("slow"); /* 서서히 사라지게 또는 $("img").fadeOut(3000)으로 속도 조절 가능 */
+        });
+
+        $("#in").click(function () {
+          $("img").fadeIn("slow"); /* 서서히 보이게 */
+        });
+
+        $("#toggle").click(function () {
+          $("img").fadeToggle("slow"); /* 서서히 사라지거나 보이기 */
+        });
+        $("#to50").click(function () {
+          $("img").fadeTo("slow", 0.5);
+        });
+
+        $("#to10").click(function () {
+          $("img").fadeTo("slow", 0.1);
+        });
+
+        $("#to100").click(function () {
+          $("img").fadeTo("slow", 1.0);
+        });
+      });
+    </script>
+</head>
+<body>
+    <button id="out">fadeOut</button>
+   <button id="in">fadeIn</button>
+   <button id="toggle">toggle</button><br><br>
+   <button id="to50">opacity 50%</button><br><br>
+   <button id="to10">opacity 10%</button><br><br>
+   <button id="to100">opacity 100%</button><br><br>
+   <p></p>
+   <img src="../img/sul1.png" name="pic2" />
+</body>
+</html>
+

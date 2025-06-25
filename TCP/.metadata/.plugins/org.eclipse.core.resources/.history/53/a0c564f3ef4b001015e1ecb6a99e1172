@@ -1,0 +1,56 @@
+package kr.project.example;
+
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
+
+class News{
+	 String title;
+	String link;
+	String image;
+	
+	public News(String title, String link, String image) {
+		this.title = title;
+		this.link = link;
+		this.image = image;
+	}
+	public String[] toArray() {
+		return new String[] {title, link, image};
+	}
+}
+
+public class NewsCrawlerUI extends JFrame{
+	private JTextField urlField; //URL입력 필드
+    private JButton crawlBtn, saveCsvBtn, saveJsonBtn;
+    private JTable resultTable; //화면출력
+    private DefaultTableModel tableModel;
+    private List<News> newsList = new ArrayList<>(); 
+    
+    public NewsCrawlerUI() {
+    	setTitle("뉴스 크롤러");
+    	setSize(800, 500);
+    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	urlField = new JTextField();
+    }
+	
+    private void startCrawling(ActionEvent e) {
+    	
+    }
+    private void saveToCSV(String filename) {
+    	
+    }
+    private void saveToJSON(String filename) {
+    	
+    }
+    public static void main(String[] args) {
+		SwingUtilities.invokeLater(() -> new NewsCrawlerUI().setVisible(true));
+	}
+}
+

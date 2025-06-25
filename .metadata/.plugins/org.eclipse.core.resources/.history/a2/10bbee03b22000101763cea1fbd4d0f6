@@ -1,7 +1,0 @@
-package chapter11;
-
-public class FunInterMain {
-	public static void main(String[] args) {
-		
-	}
-}

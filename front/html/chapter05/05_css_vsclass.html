@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vsclass</title>
+    <style>
+        a:link{
+            color: blue;
+        }
+        a:visited{
+            color:red;
+        }
+        a:hover{
+            text-decoration: overline; color:purple;
+        }
+        a:active{
+            text-decoration: overline; color:pink;
+        }
+
+        div.d1{
+            border :1px dashed red; width :400px; padding :15px;
+        }
+        div.d1:hover{
+            background-color: yellow;
+        }
+        div.d2{
+            border :1px solid green; width: 400px; padding: 15px;
+        }
+        div.d2:hover{
+            background-color: green;
+        }
+
+        div.d3{
+            color:black; width:200px; height: 50px;
+            background-color: green; opacity: 0.5;
+            transition: all 1.5s linear 0.5s;
+        }   
+    </style>
+</head>
+<body>
+    <h2>Pseudo Class</h2>
+    <p>
+        <a href="http://www.w3.org" target="_blank">W3C 방문</a>
+    </p>
+    <div class="d1">
+        <h3>가상 클래스 1영역</h3>
+        마우스 위치에 따른 박스의 변화를 보이시오
+    </div>
+    
+    <div class="d2">
+        <h3>가상 클래스 2영역</h3>
+        마우스 위치에 따른 박스의 변화를 보이시오
+    </div>
+    <p></p>
+    <hr/>
+    <h3>가상 선택자</h3>
+    <div class="d3">
+        가상 클래스를 이용한 애니메이션 효과 마우스가 
+        위에있으면 박스가 늘어나요.
+    </div>
+</body>
+</html>

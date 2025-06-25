@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getGrade(){
+            var kor = 95;//지역변수
+            document.writeln("국어점수: "+kor + "<br/>");
+        }
+        var kor = 100;
+        getGrade();
+        document.write("=============================== <br>")
+        document.writeln("국어점수: "+kor + "<br/>");
+        document.write("=============================== <br>")
+        function getGrade1(){
+            var kor1 = 95;
+        }
+        // getGrade1();
+        // document.write("지역변수 값은 함수 외부 사용 불가. <br/>");
+        // document.write("국어 점수: "+kor1+ "<br/>")
+
+        // document.write("=============================== <br>")
+        function getGrade2(){
+            var kor2 = 95;
+            return kor2;
+        }
+        getkor = getGrade2();
+        document.write("국어 점수: "+getkor+ "<br/>")
+    </script>
+
+</body>
+</html>

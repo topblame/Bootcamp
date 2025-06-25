@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="702EC7CE-8653-54C4-A2B8-F1949A7037E9" name="카드">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 00:58:54 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="card_id" id="42A5E206-ED69-6B4D-98CD-6BF4443D21CA">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 00:59:07 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="acc_id" id="6570D89C-1704-FA4C-5E64-8412016EB492">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:28:38 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A6DC844D-5A53-B6D1-1573-5B3706D26B72" referredColumn="83CF24DD-7E1C-7F58-8C93-9B8D7CB11C8D"/>
+</associations>
+</Column>
+<Column name="cust_jumin" id="061C9181-4366-F591-B7B3-0B02475C1949">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:02:10 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0D38B8B0-7EB2-54E6-ECAC-6319BA12F0E3" referredColumn="22A0B119-049A-39E1-1D7C-59A12434EBA8"/>
+</associations>
+</Column>
+<Column name="card_register_date" id="8F12DA40-B1AF-E818-04FC-9E9C270FACDD">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 00:59:27 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="card_limit_money" id="44382DA3-0C6A-2543-F4A1-EBB43695EC2F">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:00:49 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="card_approve_date" id="8E625132-DF6A-5D34-F403-FA82F5E3D606">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:00:49 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="card_type" id="4EB7A60B-5E9B-AA68-19E9-14AAD3713067">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:00:49 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D27C8066-76A1-76D4-B5DB-4DD950EF3AB3" name="카드_PK">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:02:01 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="42A5E206-ED69-6B4D-98CD-6BF4443D21CA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BC5A760B-03C5-5DD4-E3DA-38F46EDD30D4" name="cust_jumin">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:02:10 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="061C9181-4366-F591-B7B3-0B02475C1949"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="78020B4A-08C7-D1B9-4D97-F021C6B6E74F" name="카드_예금계좌_FK">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:28:38 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6570D89C-1704-FA4C-5E64-8412016EB492"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

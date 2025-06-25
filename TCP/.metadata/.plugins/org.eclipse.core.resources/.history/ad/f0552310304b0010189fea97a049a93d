@@ -1,0 +1,80 @@
+package kr.project;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Base64;
+
+public class Project01_D {
+	private static final String API_URL = "https://maps.apigw.ntruss.com/map-geocode/v2/geocode?query=";
+	private static final String CLIENT_ID = "pmt91r09zg";
+	private static final String CLIENT_SECRET = "OmU2uVtwKFRCwoMFcracHxfmYByfMbTikVRqcaBE";
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			//요청(request)
+            // 기본 좌표 및 설정
+            String center = "127.1054328,37.3595963"; // 경도, 위도
+            String level = "16"; // 확대 레벨
+            String w = "600"; // 이미지 너비
+            String h = "400"; // 이미지 높이
+            String urlStr = API_URL + "?center=" + center + "&level=" + level + "&w=" + w + "&h=" + h;
+
+            URL url = new URL(urlStr);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestProperty("X-NCP-APIGW-API-KEY-ID", CLIENT_ID);
+            con.setRequestProperty("X-NCP-APIGW-API-KEY", CLIENT_SECRET);
+            con.setRequestMethod("GET");
+            
+            //-- 응답 ----------response
+            int responseCode = con.getResponseCode();
+            if (responseCode == 200) {
+                InputStream inputStream = con.getInputStream();
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+                byte[] buffer = new byte[1024];
+                int len;
+                while ((len = inputStream.read(buffer)) != -1) {
+                    baos.write(buffer, 0, len);
+                }
+
+                // Base64 인코딩
+                String base64Image = Base64.getEncoder().encodeToString(baos.toByteArray());
+
+                // HTML 출력
+                String html = "<html><body><h3>지도 이미지</h3>"
+                        + "<img src='data:image/png;base64," + base64Image + "' />"
+                        + "</body></html>";
+
+                // 파일로 저장
+                try (PrintWriter writer = new PrintWriter("map_output.html", "UTF-8")) {
+                    writer.println(html);
+                    System.out.println("HTML 파일 생성 완료: map_output.html");
+                }
+                // jpg 파일로 저장
+                try (FileOutputStream fos = new FileOutputStream("map_output.jpg")) {
+                    fos.write(baos.toByteArray());
+                    System.out.println("JPG 파일 생성 완료: map_output.jpg");
+                }
+
+            } else {
+                System.out.println("HTTP 오류 코드: " + responseCode);
+                BufferedReader br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+                String line;
+                while ((line = br.readLine()) != null) {
+                    System.out.println(line);
+                }
+                br.close();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	}
+
+}

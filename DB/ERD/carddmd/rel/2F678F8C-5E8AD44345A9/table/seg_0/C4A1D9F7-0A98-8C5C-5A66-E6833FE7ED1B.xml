@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C4A1D9F7-0A98-8C5C-5A66-E6833FE7ED1B" name="예금계좌">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:02:42 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="예금계좌ID" id="83CF24DD-7E1C-7F58-8C93-9B8D7CB11C8D">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:04:07 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cust_jumin" id="BC865EAB-6D3D-64C5-2DFC-784C26024435">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:04:13 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CB265AA0-B62E-5F90-81A6-2E1CA83EC47D" referredColumn="22A0B119-049A-39E1-1D7C-59A12434EBA8"/>
+</associations>
+</Column>
+<Column name="예금계좌종류" id="3D503014-0703-280C-BAD5-818EB708A6A2">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:04:07 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="예금잔고" id="9719A057-21B7-1004-926A-4288D26583F7">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:04:07 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="카드신청여부" id="348C72AE-F0E0-4839-234C-B94215EEBC39">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:04:07 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="예금개설일" id="8C58D612-F8B9-10C9-4626-F2B520EEE5DD">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:04:07 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="예금자이름" id="6BAD0922-C85D-C9C1-2AE9-23F38733D0B9">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:04:07 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="전화번호" id="C1D96A19-458D-93A0-D2F9-A3B9E054780C">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:04:07 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="이메일" id="FAA7C601-0A65-9F45-E47F-6F5419F56E6C">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:04:07 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="16912810-B87E-6120-92D5-F6907E4E77CC" name="예금계좌_PK">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:05:58 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="83CF24DD-7E1C-7F58-8C93-9B8D7CB11C8D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7D860F85-A811-885C-871C-1DAD706A0316" name="cust_juminv1">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:04:13 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC865EAB-6D3D-64C5-2DFC-784C26024435"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

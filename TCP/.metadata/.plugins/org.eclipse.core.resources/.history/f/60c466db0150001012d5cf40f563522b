@@ -1,0 +1,17 @@
+package kr.OpenAi;
+
+import com.fasterxml.jackson.databind.JsonNode;
+
+public class OpenAIApp {
+	private static final String OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
+	private static final String OPENAI_API_KEY = "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";
+	
+	public static String generateWeatherResponse(JsonNode weatherData) throws Exception{
+		String prompt = String.format(
+				"현재 %s의 날씨는 다음과 같습니다:\n온도: %s°C\n날씨: %s\n날씨에 관한 자세한 설명을 해주세요.",
+				weatherData.get("name").asText(),
+				weatherData.get("main").get("temp").asText(),
+				weatherData.get("weather").get(0).get("description").asText()
+		);
+	}
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css_selector</title>
+    <style>
+        div ul{color:red;}
+        div h2{color:yellow; background-color: purple;}
+        
+        body>div>h3{color:red;}
+        body>p{color: green; background-color: aliceblue;}
+        body>h3>tel>office{color:aqua;}
+        body>h3>tel>home{color:aquamarine;}
+        
+        h1+h2{color:blue;}
+        h3+p{color: yellow; background-color: green;}
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Descendant Selector_1</h2>
+        <ul>후손선택자
+            <li>자식의 자식(후손1)</li>
+            <li>자식의 자식(후손2)</li>
+        </ul>
+    </div>
+
+    <h2>Descendant Selector_2</h2>
+    <hr/>
+
+    <div>
+        <h3>Child Selector_1</h3>
+    </div>
+    <p>자식 선택자</p>
+    <h3> 
+	    <sno>123456</sno><br>
+        <std>홍민성</std><br>
+		<tel> 
+		     <office>02-4567-1010</office><br>
+             <home>010-1234-5678</home>			 
+		</tel>
+	</h3>   
+	
+	<hr />
+    <div>
+        <h1>인접 형제 선택자1</h1>
+	    <h2>인접 형제 선택자2</h2>
+	    <ul>목록
+            <li>주제1</li>
+		    <li>주제2</li>
+        </ul>   
+    </div>
+    <h3>Adjacent Selector_1</h3>
+    <p>인접 형제 선택자에 의한 스타일 적용</p>
+    <h3>Adjacent Selector_2</h3>
+</body>
+</html>

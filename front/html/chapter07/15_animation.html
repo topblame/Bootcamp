@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>15_animation</title>
+	 <style> 
+        div {
+            width: 100px;
+            height: 100px;
+            color:orange;
+            position:absolute;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+            animation-play-state: running; /*애니메이션 재생*/
+         
+            animation: boxmove 5s alternate;
+        }
+        #div1 {
+           
+            background-color:blue;
+            animation-direction: normal; /*애니메이션 움직임 방향 normal은 기본방향(왼->오)*/
+            animation-name: L-box;
+        }
+       
+        #div2 { 
+             background-color:yellow;
+             animation-direction: reverse;
+             animation-name: R-box;
+        }
+       
+        
+        @keyframes L-box {
+            0%{left: 0px;}
+           50%{left: 200px;}
+            100%{left: 0px;}
+        }
+        @keyframes R-box {
+            0%{left: 400px;}
+           50%{left: 200px;}
+            100%{left: 400px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">JavaScript</div>
+    <div id="div2">React</div>
+</body>
+</html>
+
+
+

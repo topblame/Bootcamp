@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../script/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("button.b1").click(function(){
+            $("img").animate({
+              width: "100px",
+            });
+          });
+          $("button.b2").click(function(){
+            $("img").animate({
+              width: "200px",
+            });
+          });
+          $("button.b3").click(function(){
+            $("img").animate({
+              width: "300px",
+            });
+          });
+          $("button.move").click(function(){
+            $("img").animate({
+              width: "450px",
+              height : "300px",
+              left: "300",
+            });
+          });
+          $("button.init").click(function(){
+            $("img").animate({
+              width: "150px",
+              height : "150px",
+              left: "300",
+            });
+          });
+        });
+    </script>
+    <style>
+      .css_pic {
+        height: 430px;
+        text-align: center;
+      }
+
+      .css_pic img {
+        width: 250px;
+      }
+    </style>
+</head>
+<body>
+  <div class="css_pic">
+      버튼을 누르면 그림의 크기가 바뀝니다.
+      <p>
+        <button class="b1">가로 100픽셀</button>
+        <button class="b2">가로 200픽셀</button>
+        <button class="b3">가로 300픽셀</button><br /><br />
+        <img src="../img/sul2.jpg" name="pic1" />
+      </p>
+    </div>
+
+    <button class="move">확대</button>
+    <button class="init">축소</button>
+    <p></p>
+    <img
+      src="../img/sul1.png"
+      name="pic2"
+      width="150"
+      height="100"
+      style="position: relative"
+    />
+</body>
+</html>
+

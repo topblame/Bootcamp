@@ -1,0 +1,20 @@
+package kr.OpenAi;
+
+import java.util.Scanner;
+
+public class LangchainMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("긴문장을 입력하세요: ");
+		String input = sc.nextLine();
+		
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

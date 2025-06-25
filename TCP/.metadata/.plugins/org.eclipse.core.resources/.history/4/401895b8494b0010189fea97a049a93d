@@ -1,0 +1,62 @@
+package kr.project;
+
+
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class Project02_A {
+	public static void main(String[] args) {
+		String url = "https://news.naver.com/";
+		try {
+			// 크롤링 봇으로 차단 되지 않게. 브라우징으로 위장
+			Document doc = Jsoup.connect(url)
+					.userAgent("Mozilla/5.0")
+					.get(); //html을 가져옴
+			
+			Elements headlines = doc.select("<ul class=\"list_txt\">\r\n"
+					+ "                \r\n"
+					+ "                <li>\r\n"
+					+ "                    <a href=\"https://n.news.naver.com/mnews/article/448/0000535542?sid=104\" class=\"nclicks(rig.secteco)\" title=\"트럼프, G7 일정 접고 조기 귀국길…한미정상회담 불발될듯\">트럼프, G7 일정 접고 조기 귀국길…한미정상회담 불발될듯</a>\r\n"
+					+ "                </li>\r\n"
+					+ "            \r\n"
+					+ "        \r\n"
+					+ "            \r\n"
+					+ "                \r\n"
+					+ "                <li>\r\n"
+					+ "                    <a href=\"https://n.news.naver.com/mnews/article/020/0003641875?sid=104\" class=\"nclicks(rig.secteco)\" title=\"외교부 “한국인, 이란서 신속 출국하라”…여행경보 3단계 발령\">외교부 “한국인, 이란서 신속 출국하라”…여행경보 3단계 발령</a>\r\n"
+					+ "                </li>\r\n"
+					+ "            \r\n"
+					+ "        \r\n"
+					+ "            \r\n"
+					+ "                \r\n"
+					+ "                <li>\r\n"
+					+ "                    <a href=\"https://n.news.naver.com/mnews/article/016/0002486184?sid=100\" class=\"nclicks(rig.secteco)\" title=\"野 “김민석이 총리? ‘10대 결격 사유’ 있어…자진 사퇴하라”\">野 “김민석이 총리? ‘10대 결격 사유’ 있어…자진 사퇴하라”</a>\r\n"
+					+ "                </li>\r\n"
+					+ "            \r\n"
+					+ "        \r\n"
+					+ "            \r\n"
+					+ "                \r\n"
+					+ "                <li>\r\n"
+					+ "                    <a href=\"https://n.news.naver.com/mnews/article/020/0003641905?sid=104\" class=\"nclicks(rig.secteco)\" title=\"트럼프 패밀리, 모바일 사업까지 진출…499달러 ‘황금폰’ 내놓는다\">트럼프 패밀리, 모바일 사업까지 진출…499달러 ‘황금폰’ 내놓는다</a>\r\n"
+					+ "                </li>\r\n"
+					+ "            \r\n"
+					+ "        \r\n"
+					+ "            \r\n"
+					+ "                \r\n"
+					+ "                <li>\r\n"
+					+ "                    <a href=\"https://n.news.naver.com/mnews/article/001/0015454118?sid=104\" class=\"nclicks(rig.secteco)\" title=\"'G7 급거 귀국' 트럼프 &quot;이-이 휴전 때문 아냐…훨씬 큰것 있다&quot;\">'G7 급거 귀국' 트럼프 \"이-이 휴전 때문 아냐…훨씬 큰것 있다\"</a>\r\n"
+					+ "                </li>\r\n"
+					+ "            </ul>");
+			
+			System.out.println("▶ 주요 뉴스 헤드라인:");
+            for (Element headline : headlines) {
+                System.out.println(" - " + headline.text());
+            }
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

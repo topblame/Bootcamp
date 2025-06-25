@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="704859BE-C700-23F1-08E0-567FEF142495" name="HS_LECTURE">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:20:25 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="lec_id" id="187D3FDE-A52F-12C9-24F9-F95D49D1D4DD">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:22:07 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lec_name" id="0D3CCA62-60CE-7918-8BF1-4C47B9A16928">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:22:07 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lec_arch_grade" id="69A6A6A4-51AA-CD89-0B91-E6D04BCEB852">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:22:07 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lec_time" id="97B1E270-49CF-FD70-4585-BFEB9DE62088">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:22:07 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lec_room" id="A5A956D5-95BC-D7F5-3415-0D18F1E7D76C">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:22:07 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prof_id_1" id="8E630A78-3D1B-0B34-2390-669BBCCD1184">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:22:20 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D0EF2A33-4577-71D8-28BF-F389E582CDA6" referredColumn="841C62CC-1E16-B4EC-398B-0B98174027BE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E0A4F486-971D-3143-9A72-9C586A3E8B17" name="HS_LECTURE_PK">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:22:07 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="187D3FDE-A52F-12C9-24F9-F95D49D1D4DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5E18D34A-199E-7C01-5BE3-E7E82015B7CD" name="HS_LECTURE_HS_PROFESSOR_FK">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:22:20 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8E630A78-3D1B-0B34-2390-669BBCCD1184"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

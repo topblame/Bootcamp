@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+        function printMsg(name, age){ //기명
+            document.write('학생이름 : '+ name + ', 나이:  '+25 + '<br/>');
+        }
+        let printMsg = function(name, age){//무명
+            document.write('학생이름 : '+ name + ', 나이:  '+25 + '<br/>');
+        }
+    </script>
+
+
+    <button type="button" onclick="printMsg('솔데스크',25)">학생정보</button>
+</body>
+</html>

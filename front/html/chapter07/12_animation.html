@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>12_animation</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: relative;
+			animation: boxmove 5s linear infinite alternate;
+		}
+			
+		@keyframes boxmove{
+		   from{left: 0px;}
+		   to{left: 300px;}
+		}
+	</style>
+</head>
+<body>
+	 <div>애니메이션 박스</div>
+     <p><strong>참고: </strong>IE9 이하 혹은 낮은 버전에서 지원하지 않습니다.</p>
+</body>
+</html>
+
+
+<!-- boxmove 5s linear infinite alternate:
+5초동안 일정한 속도로 양방향(alternate) 무한반복(infinite) 움직임
+ -->
+

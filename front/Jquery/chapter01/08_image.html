@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../script/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+          $("button").on("click", function(){
+            var imgSrc= $("img").attr("src"); //속성값 읽기
+            $("img").attr("src", "../img/sul1.png")
+          });
+        });
+    </script>
+   
+</head>
+<body>
+  <h1>.attr()메소드</h1>
+    <p>이미지가 변경됩니다</p>
+    <button>생파사진</button>
+    <p></p>
+    <img
+      src="../img/sul2.jpg"
+      style="width: 320px; height: 214px; border: 1px solid black"
+    />
+</body>
+</html>
+

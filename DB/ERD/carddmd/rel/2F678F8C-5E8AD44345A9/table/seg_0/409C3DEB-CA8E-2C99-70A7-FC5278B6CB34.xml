@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="409C3DEB-CA8E-2C99-70A7-FC5278B6CB34" name="고객">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:01:08 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cust_jumin" id="22A0B119-049A-39E1-1D7C-59A12434EBA8">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:01:55 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객명" id="82107BC8-6CAD-3EEF-55F1-20EF02A7A719">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:01:55 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객주소" id="423CE19E-405C-6887-35D2-B1E2E06649DE">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:01:55 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객생년월일" id="977EB9EA-D008-251D-87B8-0CD45F520656">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:01:55 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객이메일" id="8308328C-D942-4F47-5996-01F2C1C15275">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:01:55 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객전화번호" id="93CF1077-E7B9-504B-DD7F-EA6D69D9C9D9">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:01:55 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객직업" id="80260C99-E731-871C-2BDB-0F547B876D82">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:10:04 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6A6F57B8-E35C-A4AF-7FE0-2C028C2B2294" name="고객_PK">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-04 01:01:55 UTC</createdTime>
+<ownerDesignName>carddmd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="22A0B119-049A-39E1-1D7C-59A12434EBA8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

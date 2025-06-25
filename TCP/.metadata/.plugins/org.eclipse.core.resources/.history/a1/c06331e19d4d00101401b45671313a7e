@@ -1,0 +1,6 @@
+package kr.OpenAi;
+
+public class OpenAIChainService {
+	private static final String API_URL = "https://api.openai.com/v1/chat/completions";
+	private static final String API_KEY ="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";
+}

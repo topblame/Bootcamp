@@ -1,0 +1,81 @@
+package kr.OpenAi;
+
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class OpenAIApp {
+	private static final String OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
+	private static final String OPENAI_API_KEY = "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";
+	
+	 //외부에서 받은 날씨정보(JsonNode)를 활용해서 OpenAI에게 자연어 문장 생성하라고 요청. 단 그 결과를 String으로 변환
+	 // 날씨 정보를 기반으로 OpenAI에게 자연어 설명 요청
+    public static String generateWeatherResponse(JsonNode weatherData) throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+
+        // 1. OpenWeather 응답 확인 (디버깅용)
+        System.out.println("[DEBUG] OpenWeather 응답:\n" + weatherData.toPrettyString());
+
+        // 2. Null-safe 값 추출
+        String city = weatherData.has("name") ? weatherData.get("name").asText() : "알 수 없는 도시";
+
+        String temp = weatherData.has("main") && weatherData.get("main").has("temp")
+                ? weatherData.get("main").get("temp").asText()
+                : "N/A";
+
+        String description = weatherData.has("weather") &&
+                             weatherData.get("weather").isArray() &&
+                             weatherData.get("weather").size() > 0 &&
+                             weatherData.get("weather").get(0).has("description")
+                ? weatherData.get("weather").get(0).get("description").asText()
+                : "날씨 설명 없음";
+
+        // 3. 프롬프트 생성
+        String prompt = String.format(
+                "현재 %s의 날씨는 다음과 같습니다:\n온도: %s°C\n날씨: %s\n날씨에 관한 자세한 설명을 해주세요.",
+                city, temp, description
+        );
+
+        // 4. OpenAI 요청 본문 구성
+        Map<String, Object> message = Map.of(
+                "role", "user",
+                "content", prompt
+        );
+
+        Map<String, Object> data = Map.of(
+                "model", "gpt-4o",
+                "messages", List.of(message),
+                "max_tokens", 200
+        );
+
+        String requestBody = mapper.writeValueAsString(data);
+
+        // 5. HTTP 요청 생성
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(OPENAI_API_URL))
+                .header("Content-Type", "application/json")
+                .header("Authorization", "Bearer " + OPENAI_API_KEY)
+                .POST(HttpRequest.BodyPublishers.ofString(requestBody))
+                .build();
+
+        // 6. API 호출
+        HttpClient client = HttpClient.newHttpClient();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        // 7. 응답 코드 확인
+        if (response.statusCode() != 200) {
+            throw new RuntimeException("OpenAI API 호출 실패: " + response.body());
+        }
+
+        // 8. 응답 파싱 및 결과 추출
+        JsonNode jsonResponse = mapper.readTree(response.body());
+        return jsonResponse.get("choices").get(0).get("message").get("content").asText().trim();
+    }
+}

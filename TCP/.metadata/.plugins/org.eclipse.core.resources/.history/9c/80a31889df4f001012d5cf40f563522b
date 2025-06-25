@@ -1,0 +1,70 @@
+package kr.OpenAi;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.google.common.net.MediaType;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
+public class OpenAIApi {
+	private static final String API_URL = "https://api.openai.com/v1/chat/completions";
+	private static final String API_KEY ="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";
+	public static String getResponse(ChatRequest chatRequest, String userInput) {
+
+	    try {
+	        // 기존 메시지 배열 복사
+	        List<ChatRequest.Message> messages = new ArrayList<>(chatRequest.getMessages());
+
+	        // 사용자 입력 추가
+	        ChatRequest.Message userMessage = new ChatRequest.Message();
+	        userMessage.setRole("user");
+	        userMessage.setContent(userInput);
+	        messages.add(userMessage);
+
+	        // OpenAI 요청 생성
+	        OkHttpClient client = new OkHttpClient();
+
+	        JsonObject requestBody = new JsonObject();
+	        requestBody.addProperty("model", chatRequest.getModel());
+	        requestBody.add("messages", new Gson().toJsonTree(messages));
+	        requestBody.addProperty("max_tokens", chatRequest.getMax_tokens());
+	        requestBody.addProperty("temperature", chatRequest.getTemperature());
+	        requestBody.addProperty("top_p", chatRequest.getTop_p());
+
+	        // HTTP 요청
+	        Request request = new Request.Builder()
+	                .url(API_URL)
+	                .post(RequestBody.create(
+	                        requestBody.toString(),
+	                        MediaType.parse("application/json")
+	                ))
+	                .addHeader("Authorization", "Bearer " + API_KEY)
+	                .build();
+
+	        Response response = client.newCall(request).execute();
+
+	        if (response.isSuccessful()) {
+	            JsonObject responseJson = new Gson()
+	                    .fromJson(response.body().string(), JsonObject.class);
+
+	            return responseJson.getAsJsonArray("choices")
+	                    .get(0).getAsJsonObject()
+	                    .getAsJsonObject("message")
+	                    .get("content")
+	                    .getAsString();
+	        } else {
+	            return "API 호출 실패: " + response.message();
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return "에러 발생: " + e.getMessage();
+	    }
+	}
+}

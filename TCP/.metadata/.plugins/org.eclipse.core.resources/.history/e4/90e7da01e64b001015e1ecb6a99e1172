@@ -1,0 +1,8 @@
+package kr.project.example;
+
+public class MoisCrawler {
+	public static void main(String[] args) {
+		String url = "https://www.mois.go.kr/gpms/view/jsp/rss/rss.jsp?ctxCd=1012";
+		
+	}
+}

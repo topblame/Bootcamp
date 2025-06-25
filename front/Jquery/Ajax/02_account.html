@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../script/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#sendButton").click(function(){
+                var username = $("#username").val();
+                var password = $("#password").val();
+
+                $("#result").html(`Username: ${username}, Password ${password}`);
+            });
+        });
+    </script>
+    <style>
+        #result{
+            font-weight: bold;
+            font-size: 24pt;
+        }
+    </style>
+</head>
+<body>
+    <h2>AJAX 예제</h2>
+    <label for="username">Username:</label><br />
+    <input type="text" id="username" placeholder="Username" /><br />
+    <label for="password">Password:</label><br />
+    <input type="password" id="password" placeholder="Password" /><br />
+    <p></p>
+    <button id="sendButton">로그인</button>
+    <p></p>
+    <hr />
+    <div id="result"></div>
+</body>
+</html>

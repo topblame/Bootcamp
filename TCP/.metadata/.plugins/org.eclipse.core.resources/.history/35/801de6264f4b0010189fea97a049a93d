@@ -1,0 +1,15 @@
+package kr.project;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class Project02_C {
+	public static void main(String[] args) {
+		try {
+			String url = "https://finance.naver.com/marketindex/exchangeList.naver";
+			Document doc = Jsoup.connect(url).get();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

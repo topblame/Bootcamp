@@ -1,0 +1,68 @@
+package kr.OpenAi;
+
+import java.util.List;
+
+
+import okhttp3.Response;
+
+
+public class ChatRequest {
+	private String model;
+	private List<Message> messages;
+	private Response response_format;
+	private double temperature;
+	private int max_tokens;
+	private double top_p;
+	private double frequency_penalty; //반복 텍스트에 대한 패널티
+	private double presence_penalty; //이미 특정단어에 대한 분석이 완료된 상태에서 다시 같은 단어가 등장 했을때의 패널티
+	
+	public String getModel() {
+		return model;
+	}
+	public void setModel(String model) {
+		this.model = model;
+	}
+	public List<Message> getMessages() {
+		return messages;
+	}
+	public void setMessages(List<Message> messages) {
+		this.messages = messages;
+	}
+	public Response getResponse_format() {
+		return response_format;
+	}
+	public void setResponse_format(Response response_format) {
+		this.response_format = response_format;
+	}
+	public double getTemperature() {
+		return temperature;
+	}
+	public void setTemperature(double temperature) {
+		this.temperature = temperature;
+	}
+	public int getMax_tokens() {
+		return max_tokens;
+	}
+	public void setMax_tokens(int max_tokens) {
+		this.max_tokens = max_tokens;
+	}
+	public double getTop_p() {
+		return top_p;
+	}
+	public void setTop_p(double top_p) {
+		this.top_p = top_p;
+	}
+	public double getFrequency_penalty() {
+		return frequency_penalty;
+	}
+	public void setFrequency_penalty(double frequency_penalty) {
+		this.frequency_penalty = frequency_penalty;
+	}
+	public double getPresence_penalty() {
+		return presence_penalty;
+	}
+	public void setPresence_penalty(double presence_penalty) {
+		this.presence_penalty = presence_penalty;
+	}
+	
+}

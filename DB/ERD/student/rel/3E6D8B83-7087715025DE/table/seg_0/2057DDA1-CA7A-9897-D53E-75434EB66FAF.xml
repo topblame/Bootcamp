@@ -1,0 +1,178 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2057DDA1-CA7A-9897-D53E-75434EB66FAF" name="regis_course">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:45:05 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="class_code" id="6286BC2A-4157-6E0F-9E54-0C21C5144382">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:47:35 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rc_atten_grade" id="329525DF-CEB5-95F2-6A28-00174C43E17A">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:47:35 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rc_midterm_grade" id="D7BC970C-3833-012F-4F2B-925C09B67B01">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:47:35 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rc_finalterm_grade" id="7C8E7D83-669B-0099-F099-2B7CA3E88551">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:47:35 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rc_else_grade" id="B4E5576D-28C7-E5B3-2EE5-76387BBFD4CC">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:47:35 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rc_total" id="7F13D923-E4E4-52EB-A449-CA3C582B07C1">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:47:35 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rc_avg_grade" id="1C37C507-70D8-56F9-4C0D-D5B44926BBBC">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:47:35 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stuid" id="4E00D571-A493-5B00-DE32-676B4673EE45">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:47:35 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lecid" id="C45413DF-3684-D138-3586-D110F2CAF6A2">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:47:35 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lec_id" id="1167FC65-0AE4-5112-8693-54BC4C0447FA">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:48:37 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B385FE7F-AE0F-F6A2-6125-D850D0FDB095" referredColumn="187D3FDE-A52F-12C9-24F9-F95D49D1D4DD"/>
+</associations>
+</Column>
+<Column name="stu_id" id="ED01DF4A-EF97-20C2-7389-3557C2A79619">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 08:03:23 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D083845-8A2E-1BA8-9532-6DEC1A2846A2" referredColumn="7B9D4C13-4E29-FD33-B039-A416C31A330E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9BE4E73D-C0AC-7203-3B22-843B167127E4" name="regis_course_PK">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:47:35 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6286BC2A-4157-6E0F-9E54-0C21C5144382"/>
+<colUsage columnID="1167FC65-0AE4-5112-8693-54BC4C0447FA"/>
+<colUsage columnID="ED01DF4A-EF97-20C2-7389-3557C2A79619"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E824A25C-3758-4A39-8D2D-A6A356615969" name="regis_course_HS_LECTURE_FK">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 07:48:37 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1167FC65-0AE4-5112-8693-54BC4C0447FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3818C47E-0BD9-D029-A742-E51EA5ED62BC" name="regis_course_HS_STUDENT_FK">
+<createdBy>soldesk</createdBy>
+<createdTime>2025-06-02 08:03:23 UTC</createdTime>
+<ownerDesignName>student</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ED01DF4A-EF97-20C2-7389-3557C2A79619"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

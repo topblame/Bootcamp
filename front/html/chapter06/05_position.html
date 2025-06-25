@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-weight: bold;
+            font-size: 12pt;
+        }
+        .sp1{
+            position: static; /*수직이동이지만 static이여서 이동안됨.*/
+            top: 100px;
+            background-color: cyan;
+            width: 400px;
+            height: 50px;
+        }
+        .sp2{
+            position: static; /*수직이동이지만 static이여서 이동안됨.*/
+            left: 100px;
+            background-color: orange;
+            width: 400px;
+            height: 50px;
+        }
+        .sp3{
+            background-color: lightgreen;
+            width: 400px;
+            height: 50px;
+        }
+        .sp{
+            position: static; /*수직이동이지만 static이여서 이동안됨.*/
+            left: 100px;
+            background-color: cyan;
+            width: 400px;
+            height: 50px;
+        }
+        .rp1{
+            position: relative; /*수직이동이지만 static이여서 이동안됨.*/
+            left: 30px;
+            top : -10px;
+            background-color: orange;
+            width: 400px;
+            height: 50px;
+        }
+        .rp2{
+            position: relative; /*수직이동이지만 static이여서 이동안됨.*/
+            left: 60px;
+            top : 20px;
+            background-color: lightgreen;
+            width: 400px;
+            height: 50px;
+        }
+        .ap1{
+            position: absolute;
+            left: 30px;
+            top: 70px;
+            background-color: aliceblue;
+            width: 400px;
+            height: 50px;
+        }
+        .ap2{
+            position: absolute;
+            left: 40px;
+            top: 90px;
+            background-color: lightblue;
+            width: 400px;
+            height: 50px;
+        }
+        rp{
+            position: relative; /*수직이동이지만 static이여서 이동안됨.*/
+            left: 50px;
+            top : 80px;
+            background-color: cyan;
+            width: 400px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>positioning style1</h1> 
+    <p class="sp1">정적 위치 설정 적용1</p>
+    <div class="sp2">정적 위치 설정 적용2</div>
+    <p class="sp3">기본 위치 설정</p>
+    <hr />
+    <h1>positioning style2</h1> 
+    <p class="sp">정적 위치 설정 적용</p>
+    <div class="rp1">상대 위치 설정 적용 - left 30px, top -10px</div>
+    <p class="rp2">상대 위치 설정 적용 - left 60px, top 20px</p>
+    <hr />
+    <h1>positioning style3</h1> 
+    <div class="ap1">절대 위치 설정 적용 - left 30px, top 70px</div>
+    <div class="ap2">절대 위치 설정 적용 - left 40px, top 90px</div>
+</body>
+</html>
+<!-- Position 속성
+Position 속성은 html요소가 위치를 결정하는 방식
+Position의 4가지 유형: 디폴트 static position
+1.정적 위치(static position) 
+2.상대 위치(relative position) 코드순서대로 컴파일한 위치를 기준으로 하여 조정
+3.절대 위치(absolute position) : x,y ==> 0,0 
+
+4.고정 위치(fixed position)-->

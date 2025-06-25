@@ -1,0 +1,5 @@
+package kr.OpenAi;
+
+public class ChatRequest {
+
+}

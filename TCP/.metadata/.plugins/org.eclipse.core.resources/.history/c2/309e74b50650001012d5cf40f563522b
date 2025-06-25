@@ -1,0 +1,9 @@
+package kr.OpenAi;
+
+public class Weather {
+	private static final String WEATHER_API_KEY = "a8afe868acc0f59e24b76e53a5090c90";
+	private static final String WEATHER_API_URL = "http://api.openweathermap.org/data/2.5/weather";
+	public static JsonNode getWeather(String city) throws Exception{
+		
+	}
+}

@@ -1,0 +1,16 @@
+package kr.OpenAi;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class RagMain {
+	public static void main(String[] args) throws IOException, InterruptedException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("질문을 입력하세요: ");
+		String question =  sc.nextLine();
+		
+		String context = TextChunker.searchRelevantText("document.txt", question.contains("딥러닝") ? "딥러닝" : "AI");
+		String result = RagService.askWithContext(context, question);
+		System.out.println("\n문서 기반 응답:\n" + result);
+	}
+}

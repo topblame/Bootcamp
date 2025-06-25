@@ -1,0 +1,36 @@
+package kr.project;
+
+import java.awt.Choice;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemListener;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+public class Project02_GUI extends JFrame implements ActionListener, ItemListener{
+	// 멤버변수
+	   private Choice chyear, chmonth;
+	   private JLabel yLabel, mLabel;
+	   private JTextArea area;
+	   GregorianCalendar gc;
+	   private int year, month;
+	   private JLabel[] dayLabel = new JLabel[7];
+	   private String[] day = { "일", "월", "화", "수", "목", "금", "토" };
+	   private JButton[] days = new JButton[42];// 7일이 6주이므로 42개의 버튼필요
+	   private JPanel selectPanel = new JPanel();
+	   private GridLayout grid = new GridLayout(7, 7, 5, 5);// 행,열,수평갭,수직갭
+	   private Calendar ca = Calendar.getInstance();
+	   private Dimension dimen, dimen1;
+	   private int xpos, ypos;
+	   
+	   public Project02_GUI() {
+		   setTitle("오늘의 QI: " + ca.get(Calendar.YEAR) + "/" + (ca.get(Calendar.MONTH)));
+	   }
+}

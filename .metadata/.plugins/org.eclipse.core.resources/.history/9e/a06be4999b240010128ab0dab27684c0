@@ -1,7 +1,0 @@
-package chapter14.stack;
-
-public class CoinMain_03 {
-	public static void main(String[] args) {
-		Coin coinBox = new Coin();
-	}
-}

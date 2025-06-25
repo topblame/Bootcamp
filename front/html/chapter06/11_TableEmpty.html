@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>11_TableEmpty</title>
+	<style>
+		td,th{
+			border: 1px solid blue;
+		}
+		#tb1{
+			border-collapse: separate;
+			caption-side:top;
+			empty-cells: hide;
+		}
+		#tb2{
+			border-collapse: separate;
+			caption-side:bottom;
+			empty-cells: show;
+		}
+	</style>
+
+</head>
+<body>
+	<table id="tb1" border="1" width="300px">
+		<caption>[table1-1] Korea University</caption>
+		<tr>
+			<td>국어</td>
+			<td>영어</td>
+			<td></td>
+		</tr>
+		
+		<tr>
+			<td>수학</td>
+			<td></td>
+		</tr>
+	</table>
+	<p></p>
+	<table id="tb2" border="1" width="300px">
+	<caption>[table1-2] USA University</caption>
+		<tr>
+			<td>국어</td>
+			<td>영어</td>
+			<td></td>
+		</tr>
+		
+		<tr>
+			<td>수학</td>
+			<td></td>
+		</tr>
+	</table>
+</body>
+</html>

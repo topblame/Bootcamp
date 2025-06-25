@@ -1,0 +1,8 @@
+package kr.project;
+
+import java.awt.event.ActionListener;
+
+public class NaverMap implements ActionListener{
+	private static final String GEOCODE_API_URL ="https://maps.apigw.ntruss.com/map-geocode/v2/geocode";
+	private static final String STATICMAP_API_URL = "";
+}

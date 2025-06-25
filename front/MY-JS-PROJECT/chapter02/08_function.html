@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+        var arrdata =[];
+        function insertArr(){
+            var i;
+            for(i =0; i<=99; i++){
+                arrdata[i] = i+1;
+            }
+            selectArr();
+        }
+        function selectArr(){
+            var i;
+            for(i = 0; i< arrdata.length; i++){
+                document.write(arrdata[i] +" ");
+            }
+            addArr();
+        }
+        function addArr(){
+            var i;
+            var sum=0;
+            for (i = 0; i<arrdata.length; i++){
+                document.write(arrdata[i] + " ");
+            }
+            document.write();
+            document.write();
+        }
+    </script>
+
+    <button type ="button" onclick="inserArr()"> 배열 생성 조회 미션</button>
+    
+</body>
+</html>

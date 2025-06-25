@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attribute</title>
+</head>
+<body>
+    <form>
+        <p>쓰기전용: <input type="text" name="name" size="20" placeholder="이름을 입력하세요." autofocus></p>
+        <p>읽기전용: <input type="text" name="name" size="20" readonly autofocus></p>
+        <p>사용안함: <input type="text" name="name" size="20" disabled></p>
+        <p>자동완성: <input type="text" name="name" size="20" autocomplete="on" required></p>
+        <textarea cols="50" rows = "5" spellcheck="true">오타를 체크해줍니다.</textarea>
+    </form>
+    <hr>
+    <h3>iframe 공간 분할 예제</h3>
+    <div style="background-color: #ffff00;">
+        <span>
+            <a href="intro.html" target="if_a">인사말</a>
+        </span>
+        <span>
+            <a href="lecture.html" target="if_b">강의소개</a>
+        </span>
+        <span>
+            <a href="intro.html" target="if_a">저자소개</a>
+        </span>
+        <span>
+            <a href="http://cafe.naver.com/go2web" target="if_b">저자 홈페이지</a>
+        </span>
+    </div>
+    <p></p>
+    <iframe src="basic.html" width="400" height="200" name="if_a" frameborder="0"></iframe>
+    <iframe src="basic.html" width="400" height="200" name="if_b" scrolling="yes"></iframe>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../script/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button.hide").click(function(){
+                $("p").hide();
+            });
+             $("button.show").click(function(){
+                $("p").show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>메세지: jquery 입문</p>
+    <button class="hide">메세지 삭제.</button>
+    <button class = "show">메세지 출력.</button>
+</body>
+</html>
+
+<!-- $(document).ready: script 본문이 로드 된 후 실행 단 이미, 비디오 소리와는 상관없음. 
+ DOMContentload와 같은원리 
+ $(window).on("load"): script가 본문과 이미지, 비디오소리까지 완전히 로드된 후 실행.-->

@@ -1,0 +1,19 @@
+package kr.project;
+
+
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class Project02_A {
+	public static void main(String[] args) {
+		String url = "https://news.naver.com/";
+		try {
+			Document doc = Jsoup.connect(url)
+					.userAgent("Mozilla/5.0")
+					.get();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

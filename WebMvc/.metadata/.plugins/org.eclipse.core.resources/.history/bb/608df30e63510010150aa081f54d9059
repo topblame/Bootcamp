@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>addProduct.jsp</title>
+</head>
+<body>
+<%
+request.setCharacterEncoding("UTF-8");
+
+// 선택된 상품 가져오기 
+String product = request.getParameter("product");
+
+%>
+</body>
+</html>

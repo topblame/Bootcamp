@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09_tmenu</title>
+	<style>
+		div {
+	        width: 100px; 
+            height: 50px;
+	        background: red;
+	        color: yellow;
+	        border: 1px solid black;
+	        transition: width 3s;
+	    }
+	     #div1 { 
+	         /*처음부터 끝까지 동일한 속도로 전환 효과:*/
+            transition-timing-function: linear;
+           }
+	     #div2 { 
+	         /*처음과 마지막에 천천히 단 중간속도 빠름:*/
+            transition-timing-function: ease;
+           }
+	     #div3 { 
+	         /*처음에만 천천히 시작*/
+            transition-timing-function: ease-in;
+           }
+	     #div4 { 
+	         /*마지막만 천천히 시작*/
+            transition-timing-function: ease-out;
+           }
+	     #div5 { 
+	         /*처음과 마지막만 천천히 단 중간속도 정속도*/
+            transition-timing-function: ease-in-out;
+           }
+	    
+	     div:hover { width: 400px;}
+	</style>
+	
+</head>
+<body>
+	<div id="div1" style="top: 100px">linear</div>
+	<div id="div2" style="top: 150px">ease</div>
+	<div id="div3" style="top: 200px">ease-in</div>
+	<div id="div4" style="top: 250px">ease-out</div>
+	<div id="div5" style="top: 300px">ease-in-out</div>
+</body>
+</html>
