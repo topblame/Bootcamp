@@ -26,13 +26,13 @@ MemberDTO mbean = mdao.oneSelectMember(id);
 		<tr height="40">
 			<td align = "center" width = "150">이메일</td>
 			<td width = "250">
-			<input type="email" name = "email" value="<%=mbean.getEmail()%>" />
+			<input type="text" name = "email" value="<%=mbean.getEmail()%>" />
 			</td>
 		</tr>
 		<tr height="40">
 			<td align = "center" width = "150">전화번호</td>
 			<td width = "250">
-			<input type="phone" name = "phone" value = "<%=mbean.getPhone()%>" />
+			<input type="text" name = "phone" value = "<%=mbean.getPhone()%>" />
 			</td>
 		</tr>
 		<tr height="40">
