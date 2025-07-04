@@ -1,6 +1,0 @@
-package jspbook;
-
-public class InitialMember {
-
-}
-//서블릿(Servlet): 웹브라우저 요청(request)을 하면 그에 맞는 결과를 가져오는데 결과를 java 코드로 만들어서 보내주는것.

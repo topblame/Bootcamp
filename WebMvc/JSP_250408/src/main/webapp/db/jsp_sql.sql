@@ -41,3 +41,6 @@ create table board(
 );
 
 select * from board;
+
+alter table board modify content varchar(250);
+

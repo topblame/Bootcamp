@@ -1,9 +1,0 @@
-package jspbook;
-
-public class LoginDTO {
-	private String userid;
-	private String password;
-	
-	final String _userid = "myuser";
-	final String _password = "12345";
-}
