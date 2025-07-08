@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -22,10 +23,13 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import kr.co.soldesk.beans.UserBean;
+import kr.co.soldesk.intercepter.CheckLoginInterceptor;
+import kr.co.soldesk.intercepter.CheckWriterInterceptor;
 import kr.co.soldesk.intercepter.TopMenuInterceptor;
 import kr.co.soldesk.mapper.BoardMapper;
 import kr.co.soldesk.mapper.TopMenuMapper;
 import kr.co.soldesk.mapper.UserMapper;
+import kr.co.soldesk.service.BoardService;
 import kr.co.soldesk.service.TopMenuService;
 
 //패키지와 프로퍼티스를 전부 가져다 놓음. 
@@ -35,6 +39,7 @@ import kr.co.soldesk.service.TopMenuService;
 @ComponentScan("kr.co.soldesk.dao")
 @ComponentScan("kr.co.soldesk.service")
 @PropertySource("/WEB-INF/properties/db.properties")
+@PropertySource("/WEB-INF/properties/option.properties")
 public class ServletAppContext implements WebMvcConfigurer {
 
 	@Value("${db.classname}")
@@ -51,10 +56,13 @@ public class ServletAppContext implements WebMvcConfigurer {
 
 	@Resource(name = "loginUserBean")
 	private UserBean loginUserBean;
-	
+
 	@Autowired
 	private TopMenuService topMenuService;
-
+	
+	@Autowired
+	private BoardService boardService;
+	
 	@Bean
 	public BasicDataSource dataSource() {
 		BasicDataSource source = new BasicDataSource();
@@ -97,7 +105,9 @@ public class ServletAppContext implements WebMvcConfigurer {
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
- //----------------------------------Mapper DB SELECT--------------------------------
+
+	// ----------------------------------Mapper DB
+	// SELECT--------------------------------
 	// Controller의 메서드가 반환하는 jsp의 이름 앞뒤에 경로와 확장자를 붙혀주도록 설정한다.
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
@@ -124,6 +134,19 @@ public class ServletAppContext implements WebMvcConfigurer {
 		InterceptorRegistration reg1 = registry.addInterceptor(topMenuInterceptor);
 
 		reg1.addPathPatterns("/**"); // 모든요청에대해서 동작.
+
+		//------------
+		CheckLoginInterceptor checkLoginInterceptor = new CheckLoginInterceptor(loginUserBean);
+
+		InterceptorRegistration reg2 = registry.addInterceptor(checkLoginInterceptor);
+		reg2.addPathPatterns("/user/modify","/user/logout","/board/*");
+		reg2.excludePathPatterns("/board/main");
+		
+		
+		//---------------------------
+		CheckWriterInterceptor checkWriterInterceptor = new CheckWriterInterceptor(loginUserBean, boardService);
+		InterceptorRegistration reg3 = registry.addInterceptor(checkWriterInterceptor);
+		reg3.addPathPatterns("/board/modify", "/board/delete");
 	}
 
 	// PropertySource("/WEB-INF/properties/db.properties")소스와 메세지 별도 관리하도록 property를
@@ -138,5 +161,10 @@ public class ServletAppContext implements WebMvcConfigurer {
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer PropertySourcesPlaceholderConfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();
+	}
+
+	@Bean // content
+	public StandardServletMultipartResolver multipartResolver() {
+		return new StandardServletMultipartResolver();
 	}
 }

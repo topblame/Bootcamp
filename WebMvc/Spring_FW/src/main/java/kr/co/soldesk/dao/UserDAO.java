@@ -1,6 +1,8 @@
 package kr.co.soldesk.dao;
 
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -21,4 +23,12 @@ public class UserDAO {
 	public void addUserInfo(UserBean joinUserBean) {
 		userMapper.addUserInfo(joinUserBean);
 	}
+	
+	public UserBean getModifyUserInfo(int user_idx) {
+		return userMapper.getModifyUserInfo(user_idx);
+	}
+	public void modifyUserInfo(UserBean modifyUserBean) {
+		userMapper.modifyUserInfo(modifyUserBean);	
+	}
+	
 }

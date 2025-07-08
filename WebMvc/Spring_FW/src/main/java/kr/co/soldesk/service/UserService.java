@@ -1,6 +1,7 @@
 package kr.co.soldesk.service;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,4 +55,19 @@ public class UserService {
 	public void addUserInfo(UserBean joinUserBean) {
 		userDao.addUserInfo(joinUserBean);
 	}
+	
+	public void getModifyUserInfo(UserBean modifyUserBean) {
+		UserBean tempModifyUserBean = userDao.getModifyUserInfo(loginUserBean.getUser_idx());
+		
+		//회원의 아이디 이름 고유번호를 modifyUserBean객체에 저장
+		modifyUserBean.setUser_id(tempModifyUserBean.getUser_id());
+		modifyUserBean.setUser_name(tempModifyUserBean.getUser_name());
+		modifyUserBean.setUser_idx(tempModifyUserBean.getUser_idx());
+	}
+
+	public void modifyUserInfo(UserBean modifyUserBean) {
+		modifyUserBean.setUser_idx(loginUserBean.getUser_idx());
+		userDao.modifyUserInfo(modifyUserBean);
+	}
+
 }
