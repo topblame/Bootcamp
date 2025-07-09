@@ -50,4 +50,10 @@ public interface BoardMapper {
 	@Select("select count(*) from content_table where content_board_idx = #{content_board_idx}")
 	int getContentCnt(int content_board_idx);
 
+	@Select("SELECT a1.content_idx, " + "       a1.content_board_idx, " + "       a1.content_subject, "
+			+ "       a1.content_date, " + "       a2.user_name AS content_writer_name " + "FROM content_table a1 "
+			+ "JOIN user_table a2 " + "ON a1.content_writer_idx = a2.user_idx "
+			+ "WHERE a1.content_subject LIKE '%' || #{keyword} || '%' "
+			+ "   OR a1.content_text LIKE '%' || #{keyword} || '%'")
+	List<ContentBean> searchContents(String keyword);
 }

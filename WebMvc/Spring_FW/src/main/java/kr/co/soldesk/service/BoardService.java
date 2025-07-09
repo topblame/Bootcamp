@@ -13,7 +13,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import kr.co.soldesk.beans.BoardInfoBean;
 import kr.co.soldesk.beans.ContentBean;
 import kr.co.soldesk.beans.PageBean;
 import kr.co.soldesk.beans.UserBean;
@@ -112,5 +111,9 @@ public class BoardService {
 		PageBean pageBean = new PageBean(content_cnt, currentPage, page_listcnt, page_paginationcnt);
 
 		return pageBean;
+	}
+
+	public List<ContentBean> searchContents(String keyword) {
+		return boarddao.searchContents(keyword); // DAO 호출
 	}
 }

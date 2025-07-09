@@ -47,12 +47,13 @@ public class BoardController {
 		PageBean pageBean = boardService.getContentCnt(board_info_idx, page);
 		model.addAttribute("pageBean", pageBean);
 
+		model.addAttribute("page", page);
 		return "board/main"; // forward.
 	}
 
 	@GetMapping("/read")
 	public String read(@RequestParam("board_info_idx") int board_info_idx, @RequestParam("content_idx") int content_idx,
-			Model model) {
+			@RequestParam(value = "page", defaultValue = "1") int page, Model model) {
 		// 글 목록보기시 필요.
 		model.addAttribute("board_info_idx", board_info_idx);
 		// 수정 또는 삭제시 필요로하는 글번호
@@ -61,6 +62,8 @@ public class BoardController {
 		// 상세정보.
 		ContentBean readContentBean = boardService.getContentInfo(content_idx);
 		model.addAttribute("readContentBean", readContentBean);
+
+		model.addAttribute("page", page);
 		return "board/read";
 	}
 
@@ -101,11 +104,11 @@ public class BoardController {
 
 	@GetMapping("/modify")
 	public String modify(@RequestParam("board_info_idx") int board_info_idx,
-			@RequestParam("content_idx") int content_idx,
+			@RequestParam("content_idx") int content_idx, @RequestParam("page") int page,
 			@ModelAttribute("modifyContentBean") ContentBean modifyContentBean, Model model) {
 		model.addAttribute("board_info_idx", board_info_idx);
 		model.addAttribute("content_idx", content_idx);
-
+		model.addAttribute("page", page);
 		// 게시글 하나의 정보 가져오기
 		ContentBean tempContentBean = boardService.getContentInfo(content_idx);
 		modifyContentBean.setContent_writer_name(tempContentBean.getContent_writer_name());
@@ -122,14 +125,23 @@ public class BoardController {
 
 	@PostMapping("/modify_pro")
 	public String modify_pro(@Valid @ModelAttribute("modifyContentBean") ContentBean modifyContentBean,
-			BindingResult result) {
+			BindingResult result, @RequestParam("page") int page, Model model) {
 
 		if (result.hasErrors()) {
 			return "board/modify";
 		}
-
+		model.addAttribute("page", page);
 		boardService.modifyContentInfo(modifyContentBean);
 		return "board/modify_success";
 	}
 
+	@GetMapping("/search")
+	public String search(@RequestParam("keyword") String keyword, Model model) {
+
+		List<ContentBean> searchResults = boardService.searchContents(keyword); // Service에서 검색 실행
+
+		model.addAttribute("searchResults", searchResults); // 검색 결과 추가
+		model.addAttribute("keyword", keyword); // 검색 키워드 추가
+		return "board/search"; // 검색 결과를 보여줄 JSP 파일
+	}
 }

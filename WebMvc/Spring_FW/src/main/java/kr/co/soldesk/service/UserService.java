@@ -1,9 +1,15 @@
 package kr.co.soldesk.service;
 
-import javax.annotation.Resource;
-import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
+import javax.annotation.Resource;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import kr.co.soldesk.beans.UserBean;
@@ -17,6 +23,17 @@ public class UserService {
 	// UserBean의 loginUserBean객체로서 session 영역을 의미함.
 	@Resource(name = "loginUserBean")
 	private UserBean loginUserBean;
+	// 비밀번호를 해시화
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
+
+	private Map<String, Integer> loginFailCount = new HashMap<>();
+	// 계정 잠금 시간
+	private Map<String, Long> lockoutTimeMap = new ConcurrentHashMap<>();
+
+	private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+	private static final int MAX_LOGIN_ATTEMPTS = 5; // 로그인 실패 카운터
+	private static final int LOCKOUT_DURATION_MS = 5000; // 5초 잠금
 
 	public boolean checkuserIdExist(String user_id) {
 
@@ -32,34 +49,64 @@ public class UserService {
 
 	public void getLoginUserInfo(UserBean tempLoginUserBean) {
 
-		// DB에 있는 유저정보.
-		UserBean tempLoginUserBean2 = userDao.getLoginUserInfo(tempLoginUserBean);
+		String userId = tempLoginUserBean.getUser_id();
 
-		if (tempLoginUserBean2 != null) {
-			if (tempLoginUserBean.getUser_pw().equals(tempLoginUserBean2.getUser_pw())) {
-				// 데이터 베이스에 있는 정보를 세션영역에 저장.
-				loginUserBean.setUser_idx(tempLoginUserBean2.getUser_idx());
-				loginUserBean.setUser_name(tempLoginUserBean2.getUser_name());
-				loginUserBean.setUserLogin(true); // 로그인 성공
-			}//if
-			else {
-				loginUserBean.setUserLogin(false);
+		// 계정 잠금 여부 확인
+		if (lockoutTimeMap.containsKey(userId)) {
+			long lockoutEndTime = lockoutTimeMap.get(userId);
+			if (System.currentTimeMillis() < lockoutEndTime) {
+				long secondsRemaining = (lockoutEndTime - System.currentTimeMillis()) / 1000;
+				throw new RuntimeException("잠시 후 다시 시도해주세요. " + secondsRemaining + "초 남았습니다.");
+			} else {
+				// 잠금 시간이 지나면 해제
+				lockoutTimeMap.remove(userId);
+				loginFailCount.put(userId, 0); // 실패 카운트 초기화
 			}
-		}//if
-		else {
-			loginUserBean.setUserLogin(false);
 		}
 
+		UserBean tempLoginUserBean2 = userDao.getLoginUserInfo(tempLoginUserBean);
+
+		if (tempLoginUserBean2 != null
+				&& passwordEncoder.matches(tempLoginUserBean.getUser_pw(), tempLoginUserBean2.getUser_pw())) {
+			// 로그인 성공 처리
+			loginUserBean.setUser_idx(tempLoginUserBean2.getUser_idx());
+			loginUserBean.setUser_name(tempLoginUserBean2.getUser_name());
+			loginUserBean.setUserLogin(true);
+			loginFailCount.put(userId, 0); // 로그인 성공 시 실패 카운트 초기화
+
+			logger.info("로그인 성공: 사용자 ID: {}", userId);
+		} else {
+			// 로그인 실패 처리
+			int failCount = loginFailCount.getOrDefault(userId, 0) + 1;
+			loginFailCount.put(userId, failCount);
+
+			if (failCount >= MAX_LOGIN_ATTEMPTS) {
+				// 계정 잠금 설정
+				lockoutTimeMap.put(userId, System.currentTimeMillis() + LOCKOUT_DURATION_MS);
+				logger.error("로그인 시도가 너무 많습니다. 사용자 ID: {}", userId);
+				throw new RuntimeException("로그인 시도가 너무 많습니다. 5초 후 다시 시도해주세요.");
+			}
+
+			logger.warn("로그인 실패: 사용자 ID: {}, 실패 횟수: {}", userId, failCount);
+		}
+	}
+
+	// 로그인 실패 카운터 반환
+	public int getFailCount(String userId) {
+		return loginFailCount.getOrDefault(userId, 0);
 	}
 
 	public void addUserInfo(UserBean joinUserBean) {
+		// 비번 해시 암호화 하여 DB에 저장
+		String encodedPassword = passwordEncoder.encode(joinUserBean.getUser_pw());
+		joinUserBean.setUser_pw(encodedPassword);
 		userDao.addUserInfo(joinUserBean);
 	}
-	
+
 	public void getModifyUserInfo(UserBean modifyUserBean) {
 		UserBean tempModifyUserBean = userDao.getModifyUserInfo(loginUserBean.getUser_idx());
-		
-		//회원의 아이디 이름 고유번호를 modifyUserBean객체에 저장
+
+		// 회원의 아이디 이름 고유번호를 modifyUserBean객체에 저장
 		modifyUserBean.setUser_id(tempModifyUserBean.getUser_id());
 		modifyUserBean.setUser_name(tempModifyUserBean.getUser_name());
 		modifyUserBean.setUser_idx(tempModifyUserBean.getUser_idx());

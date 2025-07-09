@@ -31,11 +31,22 @@
 						<c:if test="${fail == true }">
 							<div class="alert alert-danger">
 								<h3>로그인 실패</h3>
-								<p>아이디 비밀번호를 확인해주세요</p>
+								<c:if test="${not empty errorMessage}">
+									<p>${errorMessage}</p>
+								</c:if>
+								<c:if test="${empty errorMessage}">
+									<p>
+										아이디와 비밀번호를 확인해주세요. 로그인 실패 횟수:
+										<c:out value="${failCount}" />
+									</p>
+								</c:if>
 							</div>
 						</c:if>
 						<form:form action="${root }user/login_pro" method="post"
 							modelAttribute="tempLoginUserBean">
+							<!-- csrf 토큰값 전송-> 서버로 전송된 토큰값은 클라이언트 요청을 매칭하여 검증한다 -->
+							<input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" />
 							<div class="form-group">
 								<form:label path="user_id">아이디</form:label>
 								<form:input path="user_id" class="form-control" />

@@ -29,7 +29,7 @@ public class UserController {
 
 	// UserBean의 loginUserBean객체로서 session 영역을 의미함.
 	@Resource(name = "loginUserBean")
-	@Lazy // 안전장치. 
+	@Lazy // 안전장치.
 	private UserBean loginUserBean;
 
 	// topmenu -> user/login @ModelAttribute("tempLoginUserBean") -> login.jsp
@@ -37,27 +37,42 @@ public class UserController {
 	// 객체 유효성 적용.
 	@GetMapping("/login")
 	public String login(@ModelAttribute("tempLoginUserBean") UserBean tempLoginUserBean,
-			 @RequestParam(value = "fail", defaultValue = "false") boolean fail, Model model) {
-		//fail에 false면 실패하지 않았음 이므로 성공. 정상출력
+			@RequestParam(value = "fail", defaultValue = "false") boolean fail, Model model) {
+		// fail에 false면 실패하지 않았음 이므로 성공. 정상출력
 		model.addAttribute("fail", fail);
-		
+
 		return "user/login";
 	}
 
 	// 유효성 적용 + 결과 유무.
 	@PostMapping("/login_pro")
 	public String login_pro(@Valid @ModelAttribute("tempLoginUserBean") UserBean tempLoginUserBean,
-			BindingResult result) {
-
+			BindingResult result, Model model) {
+		// 유효성 검사 실패 시 로그인 페이지로 돌아감
 		if (result.hasErrors()) {
-			return "user/login"; // 처음부터 다시 시작.
+			return "user/login";
 		}
-		userService.getLoginUserInfo(tempLoginUserBean);
-		
-		if(loginUserBean.isUserLogin()==true) {
-			return "user/login_success"; // 유효성통과하고, 로그인 성공
+
+		try {
+			// 로그인 시도
+			userService.getLoginUserInfo(tempLoginUserBean);
+
+			// 로그인 성공
+			if (loginUserBean.isUserLogin()) {
+				return "user/login_success";
+			} else {
+				// 로그인 실패 : getFailCount()-> 브루트포스 공격을 막아줍니다. 
+				int failCount = userService.getFailCount(tempLoginUserBean.getUser_id());
+				model.addAttribute("fail", true);
+				model.addAttribute("failCount", failCount); // 실패 횟수 전달
+				return "user/login";
+			}
+		} catch (RuntimeException e) {
+			// 브루트포스 공격 방지: 로그인 시도가 너무 많을 경우 처리
+			model.addAttribute("fail", true);
+			model.addAttribute("errorMessage", e.getMessage());
+			return "user/login";
 		}
-		return "user/login_fail";  // 유효성통과했으나 로그인 실패.
 	}
 
 	@GetMapping("/join")
@@ -79,17 +94,19 @@ public class UserController {
 	@GetMapping("/modify")
 	public String modify(@ModelAttribute("modifyUserBean") UserBean modifyUserBean) {
 		userService.getModifyUserInfo(modifyUserBean);
-		
+
 		return "user/modify";
 	}
+
 	@PostMapping("/modify_pro")
 	public String modify_pro(@Valid @ModelAttribute("modifyUserBean") UserBean modifyUserBean, BindingResult result) {
-		if(result.hasErrors()) {
+		if (result.hasErrors()) {
 			return "user/modify";
 		}
 		userService.modifyUserInfo(modifyUserBean);
 		return "user/modify_success";
 	}
+
 	@GetMapping("/logout")
 	public String logout() {
 		loginUserBean.setUserLogin(false);
@@ -100,6 +117,7 @@ public class UserController {
 	public String not_login() {
 		return "user/not_login";
 	}
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		UserValidator validator1 = new UserValidator();

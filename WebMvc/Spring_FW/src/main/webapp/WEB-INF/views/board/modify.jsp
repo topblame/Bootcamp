@@ -35,6 +35,8 @@
 							<form:hidden path="content_idx" />
 							<!--  수정후 확인하러 돌아올때 필요한 게시판 번호 필요, -->
 							<form:hidden path="content_board_idx" />
+							<!-- 초기화된 값 즉 1을 적용해야 하므로 value 사용하기 위해 일반 input태그로 적용 -->
+							<input type = "hidden" name="page" value = "${page } " />
 
 							<div class="form-group">
 								<form:label path="content_writer_name">작성자</form:label>
@@ -77,7 +79,7 @@
 								<div class="text-right">
 									<form:button class='btn btn-primary'>수정완료</form:button>
 									<a
-										href="${root }board/read?board_info_idx=${board_info_idx}&content_idx=${content_idx}"
+										href="${root }board/read?board_info_idx=${board_info_idx}&content_idx=${content_idx}&page=${page}"
 										class="btn btn-info">취소</a>
 								</div>
 							</div>
