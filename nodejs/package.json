@@ -4,9 +4,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start_cjs": "node src/index_cjs.js",
+    "start": "node src/index.js",
+    "app": "node src/app.js",
+    "color": "node src/color.js",
+    "date24": "node src/date_luxon.js"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.1.0",
+    "luxon": "^3.7.1",
+    "randomcolor": "^0.6.2"
+  }
 }
