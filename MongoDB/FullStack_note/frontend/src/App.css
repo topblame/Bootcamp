@@ -1,0 +1,77 @@
+/* App.css */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f6f8fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 3rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+input {
+  padding: 0.4rem;
+  margin-bottom: 0.6rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+
+button {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  margin-right: 0.3rem;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.note-item {
+  background-color: #f1f3f5;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.7rem;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-actions button {
+  background-color: #ffc107;
+  color: black;
+}
+
+.note-actions button:last-child {
+  background-color: #dc3545;
+  color: white;
+  margin-left: 0.3rem;
+}
